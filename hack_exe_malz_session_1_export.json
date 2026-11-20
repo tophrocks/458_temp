@@ -1,0 +1,1702 @@
+{
+  "_schema": "aidebug/session/v2",
+  "_exported": "2026-11-20T03:08:06.706545+00:00",
+  "_privacy_notice": "Dynamic API and network records may contain sensitive arguments, URLs, headers, addresses, or payload excerpts. Handle accordingly.",
+  "binary": {
+    "filename": "hack.exe.malz",
+    "path": "hack.exe.malz",
+    "sha256": "905554ce9ca73b16f0ab547d1e4cc4fc88e648687c0ce4fe8e43578f89dcbda2",
+    "arch": "x86-64",
+    "bits": 64,
+    "os_target": "Windows",
+    "format": "PE",
+    "analysis_origin": "binary",
+    "compiled_artifact_sha256": ""
+  },
+  "session": {
+    "id": 1,
+    "created_at": "2026-11-20 03:08:06",
+    "completed_at": "2026-11-20 03:08:06",
+    "mode": "static",
+    "analyzer": "Deterministic offline analysis",
+    "status": "completed"
+  },
+  "summary": {
+    "total_functions": 36,
+    "analyzed_functions": 36,
+    "risk_counts": {
+      "CRITICAL": 0,
+      "HIGH": 2,
+      "MEDIUM": 2,
+      "LOW": 0,
+      "UNKNOWN": 32
+    },
+    "mitre_techniques": {},
+    "api_calls_logged": 0,
+    "api_calls_truncated": false,
+    "network_events_logged": 0,
+    "network_events_truncated": false,
+    "runtime_events_logged": 0,
+    "runtime_events_truncated": false,
+    "highest_risk": "HIGH",
+    "ioc_strings": [
+      {
+        "value": "UAWAVAUATWVSH",
+        "function": "sub_140001180",
+        "address": "0x140001180",
+        "risk": "HIGH"
+      },
+      {
+        "value": "ATUWVSH",
+        "function": "sub_140001180",
+        "address": "0x140001180",
+        "risk": "HIGH"
+      },
+      {
+        "value": "successfully found! %s - %d",
+        "function": "sub_140007bd0",
+        "address": "0x140007bd0",
+        "risk": "HIGH"
+      }
+    ]
+  },
+  "functions": [
+    {
+      "address": "0x140001180",
+      "address_int": 5368713600,
+      "name": "sub_140001180",
+      "instruction_count": 146,
+      "disassembly": "0x140001180:  push     r12\n0x140001182:  push     rbp\n0x140001183:  push     rdi\n0x140001184:  push     rsi\n0x140001185:  push     rbx\n0x140001186:  sub      rsp, 0x20\n0x14000118a:  mov      rbx, qword ptr [rip + 0x867f]\n0x140001191:  mov      rbp, qword ptr [rip + 0xc090]\n0x140001198:  xor      edi, edi\n0x14000119a:  mov      rax, qword ptr gs:[0x30]\n0x1400011a3:  mov      rsi, qword ptr [rax + 8]\n0x1400011a7:  jmp      0x1400011c0\n0x1400011b0:  cmp      rsi, rax\n0x1400011b3:  je       0x140001320\n0x1400011b9:  mov      ecx, 0x3e8\n0x1400011be:  call     rbp\n0x1400011c0:  mov      rax, rdi\n0x1400011c3:  lock cmpxchg qword ptr [rbx], rsi\n0x1400011c8:  test     rax, rax\n0x1400011cb:  jne      0x1400011b0\n0x1400011cd:  mov      rsi, qword ptr [rip + 0x864c]\n0x1400011d4:  xor      edi, edi\n0x1400011d6:  mov      eax, dword ptr [rsi]\n0x1400011d8:  cmp      eax, 1\n0x1400011db:  je       0x140001337\n0x1400011e1:  mov      eax, dword ptr [rsi]\n0x1400011e3:  test     eax, eax\n0x1400011e5:  je       0x1400013a0\n0x1400011eb:  mov      dword ptr [rip + 0xae13], 1\n0x1400011f5:  mov      eax, dword ptr [rsi]\n0x1400011f7:  cmp      eax, 1\n0x1400011fa:  je       0x14000134c\n0x140001200:  test     edi, edi\n0x140001202:  je       0x14000136d\n0x140001208:  mov      rax, qword ptr [rip + 0x8561]\n0x14000120f:  mov      rax, qword ptr [rax]\n0x140001212:  test     rax, rax\n0x140001215:  je       0x140001223\n0x140001217:  xor      r8d, r8d\n0x14000121a:  mov      edx, 2\n0x14000121f:  xor      ecx, ecx\n0x140001221:  call     rax\n0x140001223:  call     0x1400018f0\n0x140001228:  mov      rcx, qword ptr [rip + 0x8681]\n0x14000122f:  call     qword ptr [rip + 0xbfeb]\n0x140001235:  mov      rdx, qword ptr [rip + 0x85c4]\n0x14000123c:  lea      rcx, [rip - 0x243]\n0x140001243:  mov      qword ptr [rdx], rax\n0x140001246:  call     0x140007470\n0x14000124b:  call     0x140001700\n0x140001250:  mov      ebx, dword ptr [rip + 0xadd2]\n0x140001256:  lea      edi, [rbx + 1]\n0x140001259:  movsxd   rdi, edi\n0x14000125c:  shl      rdi, 3\n0x140001260:  mov      rcx, rdi\n0x140001263:  call     0x140007a60\n0x140001268:  mov      r12, qword ptr [rip + 0xadb1]\n0x14000126f:  mov      rbp, rax\n0x140001272:  test     ebx, ebx\n0x140001274:  jle      0x1400013c0\n0x14000127a:  sub      rdi, 8\n0x14000127e:  xor      ebx, ebx\n0x140001280:  mov      rcx, qword ptr [r12 + rbx]\n0x140001284:  call     0x140007a88\n0x140001289:  lea      rsi, [rax + 1]\n0x14000128d:  mov      rcx, rsi\n0x140001290:  call     0x140007a60\n0x140001295:  mov      r8, rsi\n0x140001298:  mov      qword ptr [rbp + rbx], rax\n0x14000129d:  mov      rdx, qword ptr [r12 + rbx]\n0x1400012a1:  mov      rcx, rax\n0x1400012a4:  add      rbx, 8\n0x1400012a8:  call     0x140007a68\n0x1400012ad:  cmp      rdi, rbx\n0x1400012b0:  jne      0x140001280\n0x1400012b2:  add      rdi, rbp\n0x1400012b5:  mov      qword ptr [rdi], 0\n0x1400012bc:  mov      qword ptr [rip + 0xad5d], rbp\n0x1400012c3:  call     0x140001500\n0x1400012c8:  mov      rax, qword ptr [rip + 0x84c1]\n0x1400012cf:  mov      r8, qword ptr [rip + 0xad42]\n0x1400012d6:  mov      ecx, dword ptr [rip + 0xad4c]\n0x1400012dc:  mov      rax, qword ptr [rax]\n0x1400012df:  mov      qword ptr [rax], r8\n0x1400012e2:  mov      rdx, qword ptr [rip + 0xad37]\n0x1400012e9:  call     0x140007c90\n0x1400012ee:  mov      ecx, dword ptr [rip + 0xad18]\n0x1400012f4:  mov      dword ptr [rip + 0xad16], eax\n0x1400012fa:  test     ecx, ecx\n0x1400012fc:  je       0x1400013c8\n0x140001302:  mov      edx, dword ptr [rip + 0xad00]\n0x140001308:  test     edx, edx\n0x14000130a:  je       0x140001380\n0x14000130c:  add      rsp, 0x20\n0x140001310:  pop      rbx\n0x140001311:  pop      rsi\n0x140001312:  pop      rdi\n0x140001313:  pop      rbp\n0x140001314:  pop      r12\n0x140001316:  ret      \n0x140001320:  mov      rsi, qword ptr [rip + 0x84f9]\n0x140001327:  mov      edi, 1\n0x14000132c:  mov      eax, dword ptr [rsi]\n0x14000132e:  cmp      eax, 1\n0x140001331:  jne      0x1400011e1\n0x140001337:  mov      ecx, 0x1f\n0x14000133c:  call     0x1400079e8\n0x140001341:  mov      eax, dword ptr [rsi]\n0x140001343:  cmp      eax, 1\n0x140001346:  jne      0x140001200\n0x14000134c:  mov      rdx, qword ptr [rip + 0x84fd]\n0x140001353:  mov      rcx, qword ptr [rip + 0x84e6]\n0x14000135a:  call     0x140007a00\n0x14000135f:  mov      dword ptr [rsi], 2\n0x140001365:  test     edi, edi\n0x140001367:  jne      0x140001208\n0x14000136d:  xor      eax, eax\n0x14000136f:  xchg     qword ptr [rbx], rax\n0x140001372:  jmp      0x140001208\n0x140001380:  call     0x1400079f0\n0x140001385:  mov      eax, dword ptr [rip + 0xac85]\n0x14000138b:  add      rsp, 0x20\n0x14000138f:  pop      rbx\n0x140001390:  pop      rsi\n0x140001391:  pop      rdi\n0x140001392:  pop      rbp\n0x140001393:  pop      r12\n0x140001395:  ret      \n0x1400013a0:  mov      rdx, qword ptr [rip + 0x84c9]\n0x1400013a7:  mov      rcx, qword ptr [rip + 0x84b2]\n0x1400013ae:  mov      dword ptr [rsi], 1\n0x1400013b4:  call     0x140007a00\n0x1400013b9:  jmp      0x1400011f5\n0x1400013c0:  mov      rdi, rax\n0x1400013c3:  jmp      0x1400012b5\n0x1400013c8:  mov      ecx, eax\n0x1400013ca:  call     0x140007a30\n0x1400013cf:  nop      \n0x1400013d0:  sub      rsp, 0x28\n0x1400013d4:  mov      rax, qword ptr [rip + 0x83e5]\n0x1400013db:  mov      dword ptr [rax], 1\n0x1400013e1:  call     0x140001180\n0x1400013e6:  nop      \n0x1400013e7:  nop      \n0x1400013e8:  add      rsp, 0x28\n0x1400013ec:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368713600,
+        5368714496,
+        5368715008,
+        5368715504,
+        5368738928,
+        5368740328,
+        5368740336,
+        5368740352,
+        5368740400,
+        5368740448,
+        5368740456,
+        5368740488,
+        5368741008
+      ],
+      "called_from": [
+        5368714224,
+        5368713600
+      ],
+      "strings_referenced": [
+        "UAWAVAUATWVSH",
+        "UWVSH",
+        "ATUWVSH"
+      ],
+      "deterministic_patterns": [
+        {
+          "name": "null_preserving_xor",
+          "description": "Null-preserving XOR candidate — test/branch/XOR sequence may be an encoder; validate the enclosing loop and buffer use",
+          "severity": "HIGH",
+          "evidence": "test/jz/xor sequence @ 0x140001212"
+        }
+      ],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nulonglong FUN_140001180(undefined *param_1,undefined *param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  int iVar1;\n  longlong lVar2;\n  bool bVar3;\n  LPSTR pCVar4;\n  uint uVar5;\n  longlong lVar6;\n  undefined8 *puVar7;\n  size_t sVar8;\n  void *_Dst;\n  ulonglong uVar9;\n  undefined8 uVar10;\n  undefined8 uVar11;\n  longlong lVar12;\n  size_t _Size;\n  undefined8 *puVar13;\n  undefined8 in_R9;\n  longlong unaff_GS_OFFSET;\n  \n  lVar2 = *(longlong *)(*(longlong *)(unaff_GS_OFFSET + 0x30) + 8);\n  while( true ) {\n    LOCK();\n    lVar12 = 0;\n    lVar6 = lVar2;\n    if (DAT_14000c040 != 0) {\n      lVar12 = DAT_14000c040;\n      lVar6 = DAT_14000c040;\n    }\n    DAT_14000c040 = lVar6;\n    UNLOCK();\n    if (lVar12 == 0) break;\n    if (lVar2 == lVar12) {\n      bVar3 = true;\njoined_r0x0001400011db:\n      if (DAT_14000c048 == 1) {\n        _amsg_exit(0x1f);\n      }\n      else if (DAT_14000c048 == 0) {\n        DAT_14000c048 = 1;\n        _initterm();\n      }\n      else {\n        DAT_14000c008 = 1;\n      }\n      if (DAT_14000c048 == 1) {\n        _initterm();\n        DAT_14000c048 = 2;\n      }\n      if (!bVar3) {\n        LOCK();\n        DAT_14000c040 = 0;\n        UNLOCK();\n      }\n      uVar11 = 2;\n      uVar10 = 0;\n      tls_callback_0(0,2);\n      FUN_1400018f0(uVar10,uVar11,param_3,param_4);\n      DAT_14000c0d0 = SetUnhandledExceptionFilter(FUN_140001ca0);\n      FUN_140007470(FUN_140001000);\n      FUN_140001700();\n      uVar5 = DAT_14000c028;\n      iVar1 = DAT_14000c028 + 1;\n      _Size = (longlong)iVar1 * 8;\n      puVar7 = malloc(_Size);\n      lVar2 = (longlong)DAT_14000c020;\n      puVar13 = puVar7;\n      if (0 < (int)uVar5) {\n        lVar12 = 0;\n        do {\n          sVar8 = strlen(*(char **)(lVar2 + lVar12));\n          _Dst = malloc(sVar8 + 1);\n          *(void **)((longlong)puVar7 + lVar12) = _Dst;\n          puVar13 = (undefined8 *)(lVar2 + lVar12);\n          lVar12 = lVar12 + 8;\n          memcpy(_Dst,(void *)*puVar13,sVar8 + 1);\n        } while (_Size - 8 != lVar12);\n        puVar13 = puVar7 + (longlong)iVar1 + -1;\n      }\n      *puVar13 = 0;\n      DAT_14000c020 = puVar7;\n      FUN_140001500();\n      pCVar4 = DAT_14000c018;\n      uVar9 = (ulonglong)DAT_14000c028;\n      *(LPSTR *)__initenv_exref = DAT_14000c018;\n      uVar9 = FUN_140007c90(uVar9,DAT_14000c020,pCVar4,in_R9);\n      DAT_14000c010 = (uint)uVar9;\n      if (DAT_14000c00c != 0) {\n        if (DAT_14000c008 != 0) {\n          return uVar9;\n        }\n        _cexit();\n        return (ulonglong)DAT_14000c010;\n      }\n                    /* WARNING: Subroutine does not return */\n      exit(DAT_14000c010);\n    }\n    Sleep(1000);\n  }\n  bVar3 = false;\n  goto joined_r0x0001400011db;\n}"
+      },
+      "ai": {
+        "summary": "Deterministic analysis matched 1 behavioral pattern(s): null_preserving_xor. These heuristics require analyst validation.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [
+          "Null-preserving XOR candidate — test/branch/XOR sequence may be an encoder; validate the enclosing loop and buffer use"
+        ],
+        "mitre_technique": null,
+        "risk_level": "HIGH",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007bd0",
+      "address_int": 5368740816,
+      "name": "sub_140007bd0",
+      "instruction_count": 62,
+      "disassembly": "0x140007bd0:  push     r14\n0x140007bd2:  push     r13\n0x140007bd4:  push     r12\n0x140007bd6:  push     rbp\n0x140007bd7:  push     rdi\n0x140007bd8:  push     rsi\n0x140007bd9:  push     rbx\n0x140007bda:  sub      rsp, 0x20\n0x140007bde:  movsxd   rax, dword ptr [rcx + 0x3c]\n0x140007be2:  mov      r12d, dword ptr [rcx + rax + 0x88]\n0x140007bea:  add      r12, rcx\n0x140007bed:  mov      rbx, rcx\n0x140007bf0:  mov      edi, edx\n0x140007bf2:  mov      esi, dword ptr [r12 + 0x1c]\n0x140007bf7:  mov      eax, dword ptr [r12 + 0x20]\n0x140007bfc:  test     esi, esi\n0x140007bfe:  je       0x140007c51\n0x140007c00:  xor      r13d, r13d\n0x140007c03:  lea      rbp, [rcx + rax]\n0x140007c07:  nop      word ptr [rax + rax]\n0x140007c10:  mov      r14d, dword ptr [rbp + r13*4]\n0x140007c15:  add      r14, rbx\n0x140007c18:  mov      rcx, r14\n0x140007c1b:  call     0x140007a88\n0x140007c20:  test     rax, rax\n0x140007c23:  je       0x140007c48\n0x140007c25:  mov      rdx, r14\n0x140007c28:  add      rax, r14\n0x140007c2b:  mov      ecx, 0x35\n0x140007c30:  movsx    r8d, byte ptr [rdx]\n0x140007c34:  add      rdx, 1\n0x140007c38:  lea      r8d, [r8 + rcx*2]\n0x140007c3c:  add      ecx, r8d\n0x140007c3f:  cmp      rax, rdx\n0x140007c42:  jne      0x140007c30\n0x140007c44:  cmp      edi, ecx\n0x140007c46:  je       0x140007c62\n0x140007c48:  add      r13, 1\n0x140007c4c:  cmp      r13, rsi\n0x140007c4f:  jne      0x140007c10\n0x140007c51:  xor      eax, eax\n0x140007c53:  add      rsp, 0x20\n0x140007c57:  pop      rbx\n0x140007c58:  pop      rsi\n0x140007c59:  pop      rdi\n0x140007c5a:  pop      rbp\n0x140007c5b:  pop      r12\n0x140007c5d:  pop      r13\n0x140007c5f:  pop      r14\n0x140007c61:  ret      \n0x140007c62:  mov      ebp, dword ptr [r12 + 0x24]\n0x140007c67:  mov      r8d, edi\n0x140007c6a:  mov      rdx, r14\n0x140007c6d:  add      r13, r13\n0x140007c70:  lea      rcx, [rip + 0x1389]\n0x140007c77:  call     0x140007b80\n0x140007c7c:  lea      rax, [rbx + r13]\n0x140007c80:  movzx    eax, word ptr [rax + rbp]\n0x140007c84:  lea      rax, [rbx + rax*4]\n0x140007c88:  mov      eax, dword ptr [rax + rsi]\n0x140007c8b:  add      rax, rbx\n0x140007c8e:  jmp      0x140007c53",
+      "size_bytes": null,
+      "calls_to": [
+        5368740488,
+        5368740736
+      ],
+      "called_from": [
+        5368741008
+      ],
+      "strings_referenced": [
+        "successfully found! %s - %d"
+      ],
+      "deterministic_patterns": [
+        {
+          "name": "null_preserving_xor",
+          "description": "Null-preserving XOR candidate — test/branch/XOR sequence may be an encoder; validate the enclosing loop and buffer use",
+          "severity": "HIGH",
+          "evidence": "test/jz/xor sequence @ 0x140007bfc"
+        }
+      ],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nlonglong FUN_140007bd0(longlong param_1,uint param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  char cVar1;\n  uint uVar2;\n  uint uVar3;\n  size_t sVar4;\n  uint uVar5;\n  char *pcVar6;\n  longlong lVar7;\n  ulonglong uVar8;\n  char *_Str;\n  \n  lVar7 = (ulonglong)*(uint *)(param_1 + 0x88 + (longlong)*(int *)(param_1 + 0x3c)) + param_1;\n  uVar2 = *(uint *)(lVar7 + 0x1c);\n  uVar3 = *(uint *)(lVar7 + 0x20);\n  if (uVar2 != 0) {\n    uVar8 = 0;\n    do {\n      _Str = (char *)((ulonglong)*(uint *)(param_1 + (ulonglong)uVar3 + uVar8 * 4) + param_1);\n      sVar4 = strlen(_Str);\n      if (sVar4 != 0) {\n        uVar5 = 0x35;\n        pcVar6 = _Str;\n        do {\n          cVar1 = *pcVar6;\n          pcVar6 = pcVar6 + 1;\n          uVar5 = (int)cVar1 + uVar5 * 3;\n        } while (_Str + sVar4 != pcVar6);\n        if (param_2 == uVar5) {\n          uVar3 = *(uint *)(lVar7 + 0x24);\n          FUN_140007b80((byte *)\"successfully found! %s - %d\\n\",(ulonglong)_Str,(ulonglong)param_2,\n                        param_4);\n          return (ulonglong)\n                 *(uint *)(param_1 + (ulonglong)*(ushort *)(param_1 + uVar8 * 2 + (ulonglong)uVar3)\n                                     * 4 + (ulonglong)uVar2) + param_1;\n        }\n      }\n      uVar8 = uVar8 + 1;\n    } while (uVar8 != uVar2);\n  }\n  return 0;\n}"
+      },
+      "ai": {
+        "summary": "Deterministic analysis matched 1 behavioral pattern(s): null_preserving_xor. These heuristics require analyst validation.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [
+          "Null-preserving XOR candidate — test/branch/XOR sequence may be an encoder; validate the enclosing loop and buffer use"
+        ],
+        "mitre_technique": null,
+        "risk_level": "HIGH",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140001710",
+      "address_int": 5368715024,
+      "name": "sub_140001710",
+      "instruction_count": 250,
+      "disassembly": "0x140001710:  push     rsi\n0x140001711:  push     rbx\n0x140001712:  sub      rsp, 0x38\n0x140001716:  mov      rbx, rcx\n0x140001719:  lea      rax, [rsp + 0x58]\n0x14000171e:  mov      ecx, 2\n0x140001723:  mov      qword ptr [rsp + 0x58], rdx\n0x140001728:  mov      qword ptr [rsp + 0x60], r8\n0x14000172d:  mov      qword ptr [rsp + 0x68], r9\n0x140001732:  mov      qword ptr [rsp + 0x28], rax\n0x140001737:  call     0x140007480\n0x14000173c:  mov      r8d, 0x1b\n0x140001742:  mov      edx, 1\n0x140001747:  lea      rcx, [rip + 0x7ab2]\n0x14000174e:  mov      r9, rax\n0x140001751:  call     0x140007a50\n0x140001756:  mov      rsi, qword ptr [rsp + 0x28]\n0x14000175b:  mov      ecx, 2\n0x140001760:  call     0x140007480\n0x140001765:  mov      rdx, rbx\n0x140001768:  mov      rcx, rax\n0x14000176b:  mov      r8, rsi\n0x14000176e:  call     0x140007a98\n0x140001773:  call     0x140007a20\n0x140001778:  nop      \n0x140001779:  nop      dword ptr [rax]\n0x140001780:  push     rdi\n0x140001781:  push     rsi\n0x140001782:  push     rbx\n0x140001783:  sub      rsp, 0x50\n0x140001787:  movsxd   rsi, dword ptr [rip + 0xa916]\n0x14000178e:  mov      rbx, rcx\n0x140001791:  test     esi, esi\n0x140001793:  jle      0x1400018b0\n0x140001799:  mov      rax, qword ptr [rip + 0xa908]\n0x1400017a0:  xor      r9d, r9d\n0x1400017a3:  add      rax, 0x18\n0x1400017a7:  nop      word ptr [rax + rax]\n0x1400017b0:  mov      r8, qword ptr [rax]\n0x1400017b3:  cmp      rbx, r8\n0x1400017b6:  jb       0x1400017cb\n0x1400017b8:  mov      rdx, qword ptr [rax + 8]\n0x1400017bc:  mov      edx, dword ptr [rdx + 8]\n0x1400017bf:  add      r8, rdx\n0x1400017c2:  cmp      rbx, r8\n0x1400017c5:  jb       0x140001855\n0x1400017cb:  add      r9d, 1\n0x1400017cf:  add      rax, 0x28\n0x1400017d3:  cmp      r9d, esi\n0x1400017d6:  jne      0x1400017b0\n0x1400017d8:  mov      rcx, rbx\n0x1400017db:  call     0x1400021d0\n0x1400017e0:  mov      rdi, rax\n0x1400017e3:  test     rax, rax\n0x1400017e6:  je       0x1400018d2\n0x1400017ec:  mov      rax, qword ptr [rip + 0xa8b5]\n0x1400017f3:  lea      rbx, [rsi + rsi*4]\n0x1400017f7:  shl      rbx, 3\n0x1400017fb:  add      rax, rbx\n0x1400017fe:  mov      qword ptr [rax + 0x20], rdi\n0x140001802:  mov      dword ptr [rax], 0\n0x140001808:  call     0x140002310\n0x14000180d:  mov      edx, dword ptr [rdi + 0xc]\n0x140001810:  mov      r8d, 0x30\n0x140001816:  lea      rcx, [rax + rdx]\n0x14000181a:  mov      rax, qword ptr [rip + 0xa887]\n0x140001821:  lea      rdx, [rsp + 0x20]\n0x140001826:  mov      qword ptr [rax + rbx + 0x18], rcx\n0x14000182b:  call     qword ptr [rip + 0xba0f]\n0x140001831:  test     rax, rax\n0x140001834:  je       0x1400018b7\n0x14000183a:  mov      eax, dword ptr [rsp + 0x44]\n0x14000183e:  lea      edx, [rax - 0x40]\n0x140001841:  and      edx, 0xffffffbf\n0x140001844:  je       0x14000184e\n0x140001846:  lea      edx, [rax - 4]\n0x140001849:  and      edx, 0xfffffffb\n0x14000184c:  jne      0x140001860\n0x14000184e:  add      dword ptr [rip + 0xa84f], 1\n0x140001855:  add      rsp, 0x50\n0x140001859:  pop      rbx\n0x14000185a:  pop      rsi\n0x14000185b:  pop      rdi\n0x14000185c:  ret      \n0x140001860:  cmp      eax, 2\n0x140001863:  mov      rcx, qword ptr [rsp + 0x20]\n0x140001868:  mov      rdx, qword ptr [rsp + 0x38]\n0x14000186d:  mov      r8d, 0x40\n0x140001873:  mov      eax, 4\n0x140001878:  cmove    r8d, eax\n0x14000187c:  add      rbx, qword ptr [rip + 0xa825]\n0x140001883:  mov      qword ptr [rbx + 8], rcx\n0x140001887:  mov      r9, rbx\n0x14000188a:  mov      qword ptr [rbx + 0x10], rdx\n0x14000188e:  call     qword ptr [rip + 0xb9a4]\n0x140001894:  test     eax, eax\n0x140001896:  jne      0x14000184e\n0x140001898:  call     qword ptr [rip + 0xb95a]\n0x14000189e:  lea      rcx, [rip + 0x79d3]\n0x1400018a5:  mov      edx, eax\n0x1400018a7:  call     0x140001710\n0x1400018ac:  nop      dword ptr [rax]\n0x1400018b0:  xor      esi, esi\n0x1400018b2:  jmp      0x1400017d8\n0x1400018b7:  mov      rax, qword ptr [rip + 0xa7ea]\n0x1400018be:  mov      edx, dword ptr [rdi + 8]\n0x1400018c1:  lea      rcx, [rip + 0x7978]\n0x1400018c8:  mov      r8, qword ptr [rax + rbx + 0x18]\n0x1400018cd:  call     0x140001710\n0x1400018d2:  mov      rdx, rbx\n0x1400018d5:  lea      rcx, [rip + 0x7944]\n0x1400018dc:  call     0x140001710\n0x1400018e1:  nop      \n0x1400018e2:  nop      word ptr cs:[rax + rax]\n0x1400018ed:  nop      dword ptr [rax]\n0x1400018f0:  push     rbp\n0x1400018f1:  push     r15\n0x1400018f3:  push     r14\n0x1400018f5:  push     r13\n0x1400018f7:  push     r12\n0x1400018f9:  push     rdi\n0x1400018fa:  push     rsi\n0x1400018fb:  push     rbx\n0x1400018fc:  sub      rsp, 0x48\n0x140001900:  lea      rbp, [rsp + 0x40]\n0x140001905:  mov      r12d, dword ptr [rip + 0xa794]\n0x14000190c:  test     r12d, r12d\n0x14000190f:  je       0x140001928\n0x140001911:  lea      rsp, [rbp + 8]\n0x140001915:  pop      rbx\n0x140001916:  pop      rsi\n0x140001917:  pop      rdi\n0x140001918:  pop      r12\n0x14000191a:  pop      r13\n0x14000191c:  pop      r14\n0x14000191e:  pop      r15\n0x140001920:  pop      rbp\n0x140001921:  ret      \n0x140001928:  mov      dword ptr [rip + 0xa76e], 1\n0x140001932:  call     0x140002250\n0x140001937:  cdqe     \n0x140001939:  lea      rax, [rax + rax*4]\n0x14000193d:  lea      rax, [rax*8 + 0xf]\n0x140001945:  and      rax, 0xfffffffffffffff0\n0x140001949:  call     0x1400024b0\n0x14000194e:  mov      r13, qword ptr [rip + 0x7dfb]\n0x140001955:  mov      rbx, qword ptr [rip + 0x7e04]\n0x14000195c:  mov      dword ptr [rip + 0xa73e], 0\n0x140001966:  sub      rsp, rax\n0x140001969:  lea      rax, [rsp + 0x30]\n0x14000196e:  mov      qword ptr [rip + 0xa733], rax\n0x140001975:  mov      rax, r13\n0x140001978:  sub      rax, rbx\n0x14000197b:  cmp      rax, 7\n0x14000197f:  jle      0x140001911\n0x140001981:  mov      edx, dword ptr [rbx]\n0x140001983:  cmp      rax, 0xb\n0x140001987:  jg       0x140001b08\n0x14000198d:  mov      eax, dword ptr [rbx]\n0x14000198f:  test     eax, eax\n0x140001991:  jne      0x140001c00\n0x140001997:  mov      eax, dword ptr [rbx + 4]\n0x14000199a:  test     eax, eax\n0x14000199c:  jne      0x140001c00\n0x1400019a2:  mov      edx, dword ptr [rbx + 8]\n0x1400019a5:  cmp      edx, 1\n0x1400019a8:  jne      0x140001c3e\n0x1400019ae:  add      rbx, 0xc\n0x1400019b2:  cmp      rbx, r13\n0x1400019b5:  jae      0x140001911\n0x1400019bb:  mov      r14, qword ptr [rip + 0x7dbe]\n0x1400019c2:  movabs   r15, 0xffffffff7fffffff\n0x1400019cc:  jmp      0x140001a22\n0x1400019d0:  movzx    esi, byte ptr [rdi]\n0x1400019d3:  and      ecx, 0xc0\n0x1400019d9:  test     sil, sil\n0x1400019dc:  jns      0x140001be8\n0x1400019e2:  or       rsi, 0xffffffffffffff00\n0x1400019e9:  sub      rsi, rax\n0x1400019ec:  add      rsi, r9\n0x1400019ef:  test     ecx, ecx\n0x1400019f1:  jne      0x140001a0a\n0x1400019f3:  cmp      rsi, 0xff\n0x1400019fa:  jg       0x140001b4f\n0x140001a00:  cmp      rsi, -0x80\n0x140001a04:  jl       0x140001b4f\n0x140001a0a:  mov      rcx, rdi\n0x140001a0d:  call     0x140001780\n0x140001a12:  mov      byte ptr [rdi], sil\n0x140001a15:  add      rbx, 0xc\n0x140001a19:  cmp      rbx, r13\n0x140001a1c:  jae      0x140001ab0\n0x140001a22:  mov      eax, dword ptr [rbx]\n0x140001a24:  mov      ecx, dword ptr [rbx + 8]\n0x140001a27:  mov      edi, dword ptr [rbx + 4]\n0x140001a2a:  add      rax, r14\n0x140001a2d:  movzx    edx, cl\n0x140001a30:  mov      r9, qword ptr [rax]\n0x140001a33:  add      rdi, r14\n0x140001a36:  cmp      edx, 0x20\n0x140001a39:  je       0x140001b68\n0x140001a3f:  ja       0x140001b30\n0x140001a45:  cmp      edx, 8\n0x140001a48:  je       0x1400019d0\n0x140001a4a:  cmp      edx, 0x10\n0x140001a4d:  jne      0x140001c32\n0x140001a53:  movzx    esi, word ptr [rdi]\n0x140001a56:  and      ecx, 0xc0\n0x140001a5c:  test     si, si\n0x140001a5f:  jns      0x140001bd0\n0x140001a65:  or       rsi, 0xffffffffffff0000\n0x140001a6c:  sub      rsi, rax\n0x140001a6f:  add      rsi, r9\n0x140001a72:  test     ecx, ecx\n0x140001a74:  jne      0x140001a90\n0x140001a76:  cmp      rsi, -0x8000\n0x140001a7d:  jl       0x140001b4f\n0x140001a83:  ",
+      "size_bytes": null,
+      "calls_to": [
+        5368715024,
+        5368715136,
+        5368717776,
+        5368717904,
+        5368718096,
+        5368718512,
+        5368738944,
+        5368740384,
+        5368740432,
+        5368740504
+      ],
+      "called_from": [
+        5368715504,
+        5368715024,
+        5368715136
+      ],
+      "strings_referenced": [
+        "Mingw-w64 runtime failure:",
+        "  VirtualProtect failed with code 0x%x",
+        "  VirtualQuery failed for %d bytes at address %p",
+        "Address %p has no image-section"
+      ],
+      "deterministic_patterns": [
+        {
+          "name": "stack_string",
+          "description": "Stack-write sequence — may construct a string at runtime; this can obscure static strings but also occurs in benign compiled code",
+          "severity": "MEDIUM",
+          "evidence": "4 consecutive byte-MOVs to stack starting 0x140001723"
+        }
+      ],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid FUN_140001710(char *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  FILE *pFVar1;\n  undefined8 local_res10;\n  undefined8 local_res18;\n  undefined8 local_res20;\n  \n  local_res10 = param_2;\n  local_res18 = param_3;\n  local_res20 = param_4;\n  pFVar1 = FUN_140007480(2);\n  fwrite(\"Mingw-w64 runtime failure:\\n\",1,0x1b,pFVar1);\n  pFVar1 = FUN_140007480(2);\n  vfprintf(pFVar1,param_1,(va_list)&local_res10);\n                    /* WARNING: Subroutine does not return */\n  abort();\n}"
+      },
+      "ai": {
+        "summary": "Deterministic analysis matched 1 behavioral pattern(s): stack_string. These heuristics require analyst validation.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [
+          "Stack-write sequence — may construct a string at runtime; this can obscure static strings but also occurs in benign compiled code"
+        ],
+        "mitre_technique": null,
+        "risk_level": "MEDIUM",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140004040",
+      "address_int": 5368725568,
+      "name": "sub_140004040",
+      "instruction_count": 127,
+      "disassembly": "0x140004040:  push     r15\n0x140004042:  push     r14\n0x140004044:  push     r13\n0x140004046:  push     r12\n0x140004048:  push     rbp\n0x140004049:  push     rdi\n0x14000404a:  push     rsi\n0x14000404b:  push     rbx\n0x14000404c:  sub      rsp, 0xa8\n0x140004053:  mov      r13, qword ptr [rsp + 0x110]\n0x14000405b:  mov      edi, ecx\n0x14000405d:  mov      rbp, rdx\n0x140004060:  mov      ebx, r8d\n0x140004063:  mov      rsi, r9\n0x140004066:  call     0x1400079f8\n0x14000406b:  movsx    ecx, byte ptr [rsi]\n0x14000406e:  and      edi, 0x6000\n0x140004074:  xor      edx, edx\n0x140004076:  mov      eax, dword ptr [rax]\n0x140004078:  mov      dword ptr [rsp + 0x98], ebx\n0x14000407f:  lea      rbx, [rsi + 1]\n0x140004083:  mov      qword ptr [rsp + 0x70], rbp\n0x140004088:  mov      dword ptr [rsp + 0x30], eax\n0x14000408c:  movabs   rax, 0xfffffffdffffffff\n0x140004096:  mov      qword ptr [rsp + 0x80], rax\n0x14000409e:  xor      eax, eax\n0x1400040a0:  mov      word ptr [rsp + 0x88], ax\n0x1400040a8:  mov      eax, ecx\n0x1400040aa:  mov      dword ptr [rsp + 0x78], edi\n0x1400040ae:  mov      dword ptr [rsp + 0x7c], 0xffffffff\n0x1400040b6:  mov      dword ptr [rsp + 0x8c], 0\n0x1400040c1:  mov      word ptr [rsp + 0x90], dx\n0x1400040c9:  mov      dword ptr [rsp + 0x94], 0\n0x1400040d4:  mov      dword ptr [rsp + 0x9c], 0xffffffff\n0x1400040df:  test     ecx, ecx\n0x1400040e1:  je       0x1400041f7\n0x1400040e7:  lea      r15, [rsp + 0x7c]\n0x1400040ec:  lea      r12, [rip + 0x52bd]\n0x1400040f3:  jmp      0x14000413e\n0x1400040f8:  mov      edx, dword ptr [rsp + 0x78]\n0x1400040fc:  mov      esi, dword ptr [rsp + 0x94]\n0x140004103:  test     dh, 0x40\n0x140004106:  jne      0x140004111\n0x140004108:  cmp      dword ptr [rsp + 0x98], esi\n0x14000410f:  jle      0x140004122\n0x140004111:  mov      r8, qword ptr [rsp + 0x70]\n0x140004116:  and      dh, 0x20\n0x140004119:  jne      0x140004188\n0x14000411b:  movsxd   rdx, esi\n0x14000411e:  mov      byte ptr [r8 + rdx], al\n0x140004122:  add      esi, 1\n0x140004125:  mov      dword ptr [rsp + 0x94], esi\n0x14000412c:  movzx    eax, byte ptr [rbx]\n0x14000412f:  add      rbx, 1\n0x140004133:  movsx    ecx, al\n0x140004136:  test     ecx, ecx\n0x140004138:  je       0x1400041f0\n0x14000413e:  cmp      ecx, 0x25\n0x140004141:  jne      0x1400040f8\n0x140004143:  movzx    eax, byte ptr [rbx]\n0x140004146:  mov      dword ptr [rsp + 0x78], edi\n0x14000414a:  mov      qword ptr [rsp + 0x7c], 0xffffffffffffffff\n0x140004153:  test     al, al\n0x140004155:  je       0x1400041f0\n0x14000415b:  mov      rsi, rbx\n0x14000415e:  mov      r11, r15\n0x140004161:  xor      r10d, r10d\n0x140004164:  xor      r14d, r14d\n0x140004167:  lea      edx, [rax - 0x20]\n0x14000416a:  lea      rbp, [rsi + 1]\n0x14000416e:  movsx    ecx, al\n0x140004171:  cmp      dl, 0x5a\n0x140004174:  ja       0x140004198\n0x140004176:  movzx    edx, dl\n0x140004179:  movsxd   rdx, dword ptr [r12 + rdx*4]\n0x14000417d:  add      rdx, r12\n0x140004180:  jmp      rdx\n0x140004188:  mov      rdx, r8\n0x14000418b:  call     0x140007a40\n0x140004190:  jmp      0x140004122\n0x140004198:  sub      eax, 0x30\n0x14000419b:  cmp      al, 9\n0x14000419d:  ja       0x1400043b7\n0x1400041a3:  cmp      r14d, 3\n0x1400041a7:  ja       0x1400043b7\n0x1400041ad:  test     r14d, r14d\n0x1400041b0:  jne      0x1400048f9\n0x1400041b6:  mov      r14d, 1\n0x1400041bc:  test     r11, r11\n0x1400041bf:  je       0x1400041e0\n0x1400041c1:  mov      eax, dword ptr [r11]\n0x1400041c4:  test     eax, eax\n0x1400041c6:  js       0x1400049b2\n0x1400041cc:  lea      eax, [rax + rax*4]\n0x1400041cf:  lea      eax, [rcx + rax*2 - 0x30]\n0x1400041d3:  mov      dword ptr [r11], eax\n0x1400041d6:  nop      word ptr cs:[rax + rax]\n0x1400041e0:  movzx    eax, byte ptr [rsi + 1]\n0x1400041e4:  mov      rsi, rbp\n0x1400041e7:  test     al, al\n0x1400041e9:  jne      0x140004167\n0x1400041ef:  nop      \n0x1400041f0:  mov      ecx, dword ptr [rsp + 0x94]\n0x1400041f7:  mov      eax, ecx\n0x1400041f9:  add      rsp, 0xa8\n0x140004200:  pop      rbx\n0x140004201:  pop      rsi\n0x140004202:  pop      rdi\n0x140004203:  pop      rbp\n0x140004204:  pop      r12\n0x140004206:  pop      r13\n0x140004208:  pop      r14\n0x14000420a:  pop      r15\n0x14000420c:  ret      \n0x1400043b7:  lea      rdx, [rsp + 0x70]\n0x1400043bc:  mov      ecx, 0x25\n0x1400043c1:  call     0x140002630\n0x1400043c6:  jmp      0x14000412c\n0x1400048f9:  cmp      r14d, 2\n0x1400048fd:  mov      eax, 3\n0x140004902:  cmove    r14d, eax\n0x140004906:  jmp      0x1400041bc\n0x1400049b2:  sub      ecx, 0x30\n0x1400049b5:  movzx    eax, byte ptr [rsi + 1]\n0x1400049b9:  mov      rsi, rbp\n0x1400049bc:  mov      dword ptr [r11], ecx\n0x1400049bf:  jmp      0x1400041e7",
+      "size_bytes": null,
+      "calls_to": [
+        5368718896,
+        5368740344,
+        5368740416
+      ],
+      "called_from": [
+        5368718576
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [
+        {
+          "name": "stack_string",
+          "description": "Stack-write sequence — may construct a string at runtime; this can obscure static strings but also occurs in benign compiled code",
+          "severity": "MEDIUM",
+          "evidence": "6 consecutive byte-MOVs to stack starting 0x1400040aa"
+        }
+      ],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n/* WARNING: Type propagation algorithm not settling */\n\nint FUN_140004040(uint param_1,FILE *param_2,int param_3,byte *param_4,ulonglong *param_5)\n\n{\n  int iVar1;\n  longlong *plVar2;\n  byte bVar3;\n  uint uVar4;\n  int extraout_EAX;\n  int *piVar5;\n  char *pcVar6;\n  lconv *plVar7;\n  longlong lVar8;\n  size_t sVar9;\n  uint uVar10;\n  int iVar11;\n  ulonglong *puVar12;\n  ulonglong uVar13;\n  ushort uVar14;\n  undefined1 (*pauVar15) [10];\n  ushort uVar16;\n  byte *pbVar17;\n  byte *pbVar18;\n  wchar_t *_Str;\n  uint uVar19;\n  int iVar20;\n  uint *puVar21;\n  ulonglong local_c8;\n  ushort uStack_c0;\n  undefined1 local_a8 [3] [10];\n  WCHAR local_8a;\n  ulonglong local_88 [2];\n  FILE *local_78;\n  uint local_70;\n  uint local_6c;\n  uint auStack_68 [2];\n  undefined2 local_60;\n  int local_5c;\n  WCHAR local_58;\n  int local_54;\n  int local_50;\n  undefined4 local_4c;\n  \n  piVar5 = _errno();\n  uVar10 = (uint)(char)*param_4;\n  uVar19 = param_1 & 0x6000;\n  iVar1 = *piVar5;\n  local_50 = param_3;\n  auStack_68[0] = 0xffffffff;\n  auStack_68[1] = 0xfffffffd;\n  local_60 = 0;\n  local_6c = 0xffffffff;\n  local_5c = 0;\n  local_58 = L'\\0';\n  local_54 = 0;\n  local_4c = 0xffffffff;\n  if (*param_4 == 0) {\n    return 0;\n  }\n  uVar4 = uVar10;\n  local_78 = param_2;\n  local_70 = uVar19;\nLAB_14000413e:\n  iVar20 = local_54;\n  pbVar17 = param_4 + 1;\n  if (uVar10 == 0x25) {\n    bVar3 = *pbVar17;\n    local_6c = 0xffffffff;\n    auStack_68[0] = 0xffffffff;\n    if (bVar3 == 0) {\n      return local_54;\n    }\n    iVar20 = 0;\n    uVar10 = 0;\n    pbVar18 = pbVar17;\n    puVar21 = &local_6c;\n    local_70 = uVar19;\n    do {\n      param_4 = pbVar18 + 1;\n      iVar11 = (int)(char)bVar3;\n      switch(bVar3) {\n      case 0x20:\n        if (uVar10 != 0) goto LAB_1400041e0;\n        bVar3 = pbVar18[1];\n        local_70 = local_70 | 0x40;\n        break;\n      default:\n        if ((9 < (byte)(bVar3 - 0x30)) || (3 < uVar10)) {\nLAB_1400043b7:\n          FUN_140002630(0x25,&local_78);\n          param_4 = pbVar17;\n          goto LAB_14000412c;\n        }\n        if (uVar10 == 0) {\n          uVar10 = 1;\n        }\n        else {\nLAB_1400048f9:\n          if (uVar10 == 2) {\n            uVar10 = 3;\n          }\n        }\n        if (puVar21 != (uint *)0x0) {\n          if ((int)*puVar21 < 0) {\n            bVar3 = pbVar18[1];\n            *puVar21 = iVar11 - 0x30;\n            break;\n          }\n          *puVar21 = iVar11 + -0x30 + *puVar21 * 10;\n        }\nLAB_1400041e0:\n        bVar3 = pbVar18[1];\n        break;\n      case 0x23:\n        if (uVar10 != 0) goto LAB_1400041e0;\n        bVar3 = pbVar18[1];\n        local_70 = local_70 | 0x800;\n        break;\n      case 0x25:\n        goto switchD_140004180_caseD_25;\n      case 0x27:\n        if (uVar10 != 0) goto LAB_1400041e0;\n        local_70 = local_70 | 0x1000;\n        local_88[0] = local_88[0] & 0xffffffff00000000;\n        plVar7 = localeconv();\n        lVar8 = FUN_1400077d0(&local_8a,(byte *)plVar7->thousands_sep,0x10,(byte *)local_88);\n        if (0 < (int)lVar8) {\n          local_58 = local_8a;\n        }\n        local_5c = (int)lVar8;\n        bVar3 = pbVar18[1];\n        break;\n      case 0x2a:\n        if (puVar21 == (uint *)0x0) {\nLAB_1400045b9:\n          bVar3 = pbVar18[1];\n          uVar10 = 4;\n        }\n        else if ((uVar10 & 0xfffffffd) == 0) {\n          uVar13 = *param_5;\n          param_5 = param_5 + 1;\n          *puVar21 = (uint)uVar13;\n          if ((int)(uint)uVar13 < 0) {\n            if (uVar10 != 0) {\n              bVar3 = pbVar18[1];\n              puVar21 = (uint *)0x0;\n              auStack_68[0] = 0xffffffff;\n              uVar10 = 2;\n              break;\n            }\n            local_70 = local_70 | 0x400;\n            local_6c = -local_6c;\n          }\n          bVar3 = pbVar18[1];\n          puVar21 = (uint *)0x0;\n        }\n        else {\n          bVar3 = pbVar18[1];\n          puVar21 = (uint *)0x0;\n          uVar10 = 4;\n        }\n        break;\n      case 0x2b:\n        if (uVar10 != 0) goto LAB_1400041e0;\n        bVar3 = pbVar18[1];\n        local_70 = local_70 | 0x100;\n        break;\n      case 0x2d:\n        if (uVar10 != 0) goto LAB_1400041e0;\n        bVar3 = pbVar18[1];\n        local_70 = local_70 | 0x400;\n        break;\n      case 0x2e:\n        if (1 < uVar10) goto LAB_1400045b9;\n        bVar3 = pbVar18[1];\n        uVar10 = 2;\n        auStack_68[0] = 0;\n        puVar21 = auStack_68;\n        break;\n      case 0x30:\n        if (uVar10 != 0) {\n          if (uVar10 != 4) {\n            iVar11 = 0x30;\n            goto LAB_1400048f9;\n          }\n          goto LAB_1400043b7;\n        }\n        bVar3 = pbVar18[1];\n        local_70 = local_70 | 0x200;\n        break;\n      case 0x41:\n        puVar12 = (ulonglong *)*param_5;\n        if ((local_70 & 4) != 0) goto LAB_1400043fe;\nLAB_1400045f8:\n        uVar10 = (uint)puVar12;\n        uVar4 = (uint)((ulonglong)puVar12 >> 0x20);\n        if (-1 < (int)(0x7ff00000 - ((-uVar10 | uVar10) >> 0x1f | uVar4 & 0x7fffffff))) {\n          local_c8 = SUB108((float10)(double)puVar12,0);\n          uStack_c0 = (ushort)((unkuint10)(float10)(double)puVar12 >> 0x40);\n          if ((short)uStack_c0 < 0) {\n            local_70 = local_70 | 0x80;\n          }\n          if (((((ulonglong)puVar12 & 0xfffff00000000) == 0 && uVar10 == 0) &&\n               (uVar4 & 0x7ff00000) == 0x7ff00000) &&\n             ((((ulonglong)puVar12 & 0xfffff00000000) != 0 || uVar10 != 0) ||\n              ((ulonglong)puVar12 & 0x7ff0000000000000) != 0)) {\n            FUN_1400029c0(uStack_c0 & 0x8000,0x1400093aa,&local_78);\n            goto LAB_140004510;\n          }\n          uVar14 = uStack_c0 & 0x7fff;\n          if ((uStack_c0 & 0x7fff) == 0) {\nLAB_140004989:\n            if (local_c8 != 0) {\n              uVar14 = 0xfc05;\n            }\n          }\n          else {\n            if (uVar14 < 0x3c01) {\n              local_c8 = local_c8 >> ((byte)(0x3c01 - uVar14) & 0x3f);\n              uVar14 = uVar14 + (0x3c01 - uVar14);\n            }\n            else if ((uStack_c0 & 0x7fff) == 0) goto LAB_140004989;\n            uVar14 = uVar14 + 0xc004;\n          }\n          local_c8 = local_c8 >> 3;\n          goto LAB_140004897;\n        }\nLAB_14000490b:\n        FUN_1400029c0(0,0x1400093a6,&local_78);\n        goto LAB_140004510;\n      case 0x43:\n        goto LAB_14000469f;\n      case 0x45:\n        pauVar15 = (undefined1 (*) [10])*param_5;\n        if ((local_70 & 4) != 0) goto LAB_140004561;\nLAB_1400046d7:\n        local_a8[0] = (undefined1  [10])(float10)(double)pauVar15;\n        FUN_1400038a0(local_a8,&local_78);\n        goto LAB_140004510;\n      case 0x46:\n        pauVar15 = (undefined1 (*) [10])*param_5;\n        if ((local_70 & 4) != 0) goto LAB_140004533;\nLAB_140004708:\n        local_a8[0] = (undefined1  [10])(float10)(double)pauVar15;\n        FUN_140003940(local_a8,&local_78);\n        goto LAB_140004510;\n      case 0x47:\n        pauVar15 = (undefined1 (*) [10])*param_5;\n        if ((local_70 & 4) != 0) goto LAB_1400044fb;\nLAB_140004739:\n        local_a8[0] = (undefined1  [10])(float10)(double)pauVar15;\n        FUN_140003a20(local_a8,&local_78);\n        goto LAB_140004510;\n      case 0x49:\n        bVar3 = pbVar18[1];\n        if (bVar3 == 0x36) {\n          if (pbVar18[2] != 0x34) goto LAB_1400043b7;\n          bVar3 = pbVar18[3];\n          iVar20 = 3;\n          param_4 = pbVar18 + 3;\n          uVar10 = 4;\n        }\n        else if (bVar3 == 0x33) {\n          if (pbVar18[2] != 0x32) goto LAB_1400043b7;\n          bVar3 = pbVar18[3];\n          iVar20 = 2;\n          param_4 = pbVar18 + 3;\n          uVar10 = 4;\n        }\n        else {\n          iVar20 = 3;\n          uVar10 = 4;\n        }\n        break;\n      case 0x4c:\n        bVar3 = pbVar18[1];\n        local_70 = local_70 | 4;\n        uVar10 = 4;\n        break;\n      case 0x53:\nLAB_1400048aa:\n        _Str = (wchar_t *)*param_5;\n        if (_Str == (wchar_t *)0x0) {\n          _Str = L\"(null)\";\n        }\n        if ((int)auStack_68[0] < 0) {\n          sVar9 = wcslen(_Str);\n          FUN_140002690((longlong)_Str,(int)sVar9,&local_78);\n        }\n        else {\n          FUN_140007340((longlong)_Str,(longlong)(int)auStack_68[0]);\n          FUN_140002690((longlong)_Str,extraout_EAX,&local_78);\n        }\n        goto LAB_1400044d9;\n      case 0x58:\n      case 0x6f:\n      case 0x75:\n      case 0x78:\n        local_70 = local_70 & 0xfffffeff;\n        if (iVar20 == 3) {\n          local_88[0] = *param_5;\n        }\n        else if (iVar20 == 2) {\n          local_88[0] = (ulonglong)(uint)*param_5;\n        }\n        else {\n          uVar10 = (uint)*param_5;\n          if (iVar20 == 1) {\n            local_88[0] = (ulonglong)(uVar10 & 0xffff);\n          }\n          else {\n            local_88[0] = (ulonglong)(uVar10 & 0xff);\n            if (iVar20 != 5) {\n              local_88[0] = (ulonglong)uVar10;\n            }\n          }\n        }\n        if (iVar11 == 0x75) {\n          FUN_140002f10(local_88[0],&local_78);\n        }\n        else {\n          FUN_140002a60(iVar11,local_88[0],&local_78);\n        }\n        goto LAB_140004510;\n      case 0x61:\n        puVar12 = (ulonglong *)*param_5;\n        uVar4 = local_70 | 0x20;\n        uVar10 = local_70 & 4;\n        local_70 = uVar4;\n        if (uVar10 == 0) goto LAB_1400045f8;\nLAB_1400043fe:\n        local_c8 = *puVar12;\n        uVar16 = (ushort)(uint)puVar12[1];\n        uVar10 = (uint)(local_c8 >> 0x20) & 0x7fffffff | (uint)local_c8;\n        if (0xfffe - ((-uVar10 | uVar10) >> 0x1f | (short)uVar16 * 2 & 0xffffU) >> 0x10 != 0)\n        goto LAB_14000490b;\n        if ((short)uVar16 < 0) {\n          local_70 = local_70 | 0x80;\n        }\n        uVar14 = uVar16 & 0x7fff;\n        if (((uint)puVar12[1] & 0x7fff) == 0) {\n          if (local_c8 != 0) {\n            uVar14 = 0xc002;\n          }\n        }\n        else {\n          if ((uVar14 == 0x7fff) && (uVar10 == 0)) {\n            FUN_1400029c0((int)(short)uVar16 & 0x8000,0x1400093aa,&local_78);\n            goto LAB_140004510;\n          }\n          uVar14 = uVar14 + 0xc001;\n        }\nLAB_140004897:\n        FUN_140003ba0(local_c8,uVar14,&local_78);\n        goto LAB_140004510;\n      case 99:\n        auStack_68[0] = 0xffffffff;\n        if (iVar20 - 2U < 2) {\nLAB_14000469f:\n          auStack_68[0] = 0xffffffff;\n          local_88[0] = CONCAT62(local_88[0]._2_6_,(short)(uint)*param_5);\n          FUN_140002690((longlong)local_88,1,&local_78);\n          param_5 = param_5 + 1;\n        }\n        else {\n          local_88[0] = CONCAT71(local_88[0]._1_7_,(char)(uint)*param_5);\n          FUN_140002820((char *)local_88,1,&local_78);\n          param_5 = param_5 + 1;\n        }\n        goto LAB_14000412c;\n      case 100:\n      case 0x69:\n        local_70 = local_70 | 0x80;\n        if (iVar20 == 3) {\n          uVar13 = *param_5;\n        }\n        else {\n          uVar10 = (uint)*param_5;\n          uVar13 = (longlong)(int)uVar10;\n          if (iVar20 != 2) {\n            if (iVar20 == 1) {\n              uVar13 = (ulonglong)(short)uVar10;\n            }\n            else if (iVar20 == 5) {\n              uVar13 = (longlong)(char)uVar10;\n            }\n          }\n        }\n        FUN_140002f10(uVar13,&local_78);\n        param_5 = param_5 + 1;\n        goto LAB_14000412c;\n      case 0x65:\n        pauVar15 = (undefined1 (*) [10])*param_5;\n        uVar4 = local_70 | 0x20;\n        uVar10 = local_70 & 4;\n        local_70 = uVar4;\n        if (uVar10 == 0) goto LAB_1400046d7;\nLAB_140004561:\n        local_a8[0] = *pauVar15;\n        FUN_1400038a0(local_a8,&local_78);\n        goto LAB_140004510;\n      case 0x66:\n        pauVar15 = (undefined1 (*) [10])*param_5;\n        uVar4 = local_70 | 0x20;\n        uVar10 = local_70 & 4;\n        local_70 = uVar4;\n        if (uVar10 == 0) goto LAB_140004708;\nLAB_140004533:\n        local_a8[0] = *pauVar15;\n        FUN_140003940(local_a8,&local_78);\n        goto LAB_140004510;\n      case 0x67:\n        pauVar15 = (undefined1 (*) [10])*param_5;\n        uVar4 = local_70 | 0x20;\n        uVar10 = local_70 & 4;\n        local_70 = uVar4;\n        if (uV\n/* Ghidra output truncated by AIDebug safety limit */"
+      },
+      "ai": {
+        "summary": "Deterministic analysis matched 1 behavioral pattern(s): stack_string. These heuristics require analyst validation.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [
+          "Stack-write sequence — may construct a string at runtime; this can obscure static strings but also occurs in benign compiled code"
+        ],
+        "mitre_technique": null,
+        "risk_level": "MEDIUM",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400013f0",
+      "address_int": 5368714224,
+      "name": "sub_1400013f0",
+      "instruction_count": 8,
+      "disassembly": "0x1400013f0:  sub      rsp, 0x28\n0x1400013f4:  mov      rax, qword ptr [rip + 0x83c5]\n0x1400013fb:  mov      dword ptr [rax], 0\n0x140001401:  call     0x140001180\n0x140001406:  nop      \n0x140001407:  nop      \n0x140001408:  add      rsp, 0x28\n0x14000140c:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368713600
+      ],
+      "called_from": [],
+      "strings_referenced": [
+        "ATUWVSH"
+      ],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid entry(undefined *param_1,undefined *param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  DAT_14000c090 = 0;\n  FUN_140001180(param_1,param_2,param_3,param_4);\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140001500",
+      "address_int": 5368714496,
+      "name": "sub_140001500",
+      "instruction_count": 45,
+      "disassembly": "0x140001410:  sub      rsp, 0x28\n0x140001414:  call     0x140007a10\n0x140001419:  cmp      rax, 1\n0x14000141d:  sbb      eax, eax\n0x14000141f:  add      rsp, 0x28\n0x140001423:  ret      \n0x140001490:  push     rsi\n0x140001491:  push     rbx\n0x140001492:  sub      rsp, 0x28\n0x140001496:  mov      rdx, qword ptr [rip + 0x82a3]\n0x14000149d:  mov      rax, qword ptr [rdx]\n0x1400014a0:  mov      ecx, eax\n0x1400014a2:  cmp      eax, -1\n0x1400014a5:  je       0x1400014e0\n0x1400014a7:  test     ecx, ecx\n0x1400014a9:  je       0x1400014cb\n0x1400014ab:  mov      eax, ecx\n0x1400014ad:  sub      ecx, 1\n0x1400014b0:  lea      rbx, [rdx + rax*8]\n0x1400014b4:  sub      rax, rcx\n0x1400014b7:  lea      rsi, [rdx + rax*8 - 8]\n0x1400014bc:  nop      dword ptr [rax]\n0x1400014c0:  call     qword ptr [rbx]\n0x1400014c2:  sub      rbx, 8\n0x1400014c6:  cmp      rbx, rsi\n0x1400014c9:  jne      0x1400014c0\n0x1400014cb:  lea      rcx, [rip - 0x82]\n0x1400014d2:  add      rsp, 0x28\n0x1400014d6:  pop      rbx\n0x1400014d7:  pop      rsi\n0x1400014d8:  jmp      0x140001410\n0x1400014e0:  xor      eax, eax\n0x1400014e2:  nop      word ptr [rax + rax]\n0x1400014e8:  lea      r8d, [rax + 1]\n0x1400014ec:  mov      ecx, eax\n0x1400014ee:  cmp      qword ptr [rdx + r8*8], 0\n0x1400014f3:  mov      rax, r8\n0x1400014f6:  jne      0x1400014e8\n0x1400014f8:  jmp      0x1400014a7\n0x140001500:  mov      eax, dword ptr [rip + 0xab2a]\n0x140001506:  test     eax, eax\n0x140001508:  je       0x140001510\n0x14000150a:  ret      \n0x140001510:  mov      dword ptr [rip + 0xab16], 1\n0x14000151a:  jmp      0x140001490",
+      "size_bytes": null,
+      "calls_to": [
+        5368740368
+      ],
+      "called_from": [
+        5368713600,
+        5368741008
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid FUN_140001500(void)\n\n{\n  if (DAT_14000c030 != 0) {\n    return;\n  }\n  DAT_14000c030 = 1;\n  FUN_140001490();\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140001700",
+      "address_int": 5368715008,
+      "name": "sub_140001700",
+      "instruction_count": 2,
+      "disassembly": "0x140001700:  fninit   \n0x140001702:  ret      ",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid FUN_140001700(void)\n\n{\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140001780",
+      "address_int": 5368715136,
+      "name": "sub_140001780",
+      "instruction_count": 250,
+      "disassembly": "0x140001780:  push     rdi\n0x140001781:  push     rsi\n0x140001782:  push     rbx\n0x140001783:  sub      rsp, 0x50\n0x140001787:  movsxd   rsi, dword ptr [rip + 0xa916]\n0x14000178e:  mov      rbx, rcx\n0x140001791:  test     esi, esi\n0x140001793:  jle      0x1400018b0\n0x140001799:  mov      rax, qword ptr [rip + 0xa908]\n0x1400017a0:  xor      r9d, r9d\n0x1400017a3:  add      rax, 0x18\n0x1400017a7:  nop      word ptr [rax + rax]\n0x1400017b0:  mov      r8, qword ptr [rax]\n0x1400017b3:  cmp      rbx, r8\n0x1400017b6:  jb       0x1400017cb\n0x1400017b8:  mov      rdx, qword ptr [rax + 8]\n0x1400017bc:  mov      edx, dword ptr [rdx + 8]\n0x1400017bf:  add      r8, rdx\n0x1400017c2:  cmp      rbx, r8\n0x1400017c5:  jb       0x140001855\n0x1400017cb:  add      r9d, 1\n0x1400017cf:  add      rax, 0x28\n0x1400017d3:  cmp      r9d, esi\n0x1400017d6:  jne      0x1400017b0\n0x1400017d8:  mov      rcx, rbx\n0x1400017db:  call     0x1400021d0\n0x1400017e0:  mov      rdi, rax\n0x1400017e3:  test     rax, rax\n0x1400017e6:  je       0x1400018d2\n0x1400017ec:  mov      rax, qword ptr [rip + 0xa8b5]\n0x1400017f3:  lea      rbx, [rsi + rsi*4]\n0x1400017f7:  shl      rbx, 3\n0x1400017fb:  add      rax, rbx\n0x1400017fe:  mov      qword ptr [rax + 0x20], rdi\n0x140001802:  mov      dword ptr [rax], 0\n0x140001808:  call     0x140002310\n0x14000180d:  mov      edx, dword ptr [rdi + 0xc]\n0x140001810:  mov      r8d, 0x30\n0x140001816:  lea      rcx, [rax + rdx]\n0x14000181a:  mov      rax, qword ptr [rip + 0xa887]\n0x140001821:  lea      rdx, [rsp + 0x20]\n0x140001826:  mov      qword ptr [rax + rbx + 0x18], rcx\n0x14000182b:  call     qword ptr [rip + 0xba0f]\n0x140001831:  test     rax, rax\n0x140001834:  je       0x1400018b7\n0x14000183a:  mov      eax, dword ptr [rsp + 0x44]\n0x14000183e:  lea      edx, [rax - 0x40]\n0x140001841:  and      edx, 0xffffffbf\n0x140001844:  je       0x14000184e\n0x140001846:  lea      edx, [rax - 4]\n0x140001849:  and      edx, 0xfffffffb\n0x14000184c:  jne      0x140001860\n0x14000184e:  add      dword ptr [rip + 0xa84f], 1\n0x140001855:  add      rsp, 0x50\n0x140001859:  pop      rbx\n0x14000185a:  pop      rsi\n0x14000185b:  pop      rdi\n0x14000185c:  ret      \n0x140001860:  cmp      eax, 2\n0x140001863:  mov      rcx, qword ptr [rsp + 0x20]\n0x140001868:  mov      rdx, qword ptr [rsp + 0x38]\n0x14000186d:  mov      r8d, 0x40\n0x140001873:  mov      eax, 4\n0x140001878:  cmove    r8d, eax\n0x14000187c:  add      rbx, qword ptr [rip + 0xa825]\n0x140001883:  mov      qword ptr [rbx + 8], rcx\n0x140001887:  mov      r9, rbx\n0x14000188a:  mov      qword ptr [rbx + 0x10], rdx\n0x14000188e:  call     qword ptr [rip + 0xb9a4]\n0x140001894:  test     eax, eax\n0x140001896:  jne      0x14000184e\n0x140001898:  call     qword ptr [rip + 0xb95a]\n0x14000189e:  lea      rcx, [rip + 0x79d3]\n0x1400018a5:  mov      edx, eax\n0x1400018a7:  call     0x140001710\n0x1400018ac:  nop      dword ptr [rax]\n0x1400018b0:  xor      esi, esi\n0x1400018b2:  jmp      0x1400017d8\n0x1400018b7:  mov      rax, qword ptr [rip + 0xa7ea]\n0x1400018be:  mov      edx, dword ptr [rdi + 8]\n0x1400018c1:  lea      rcx, [rip + 0x7978]\n0x1400018c8:  mov      r8, qword ptr [rax + rbx + 0x18]\n0x1400018cd:  call     0x140001710\n0x1400018d2:  mov      rdx, rbx\n0x1400018d5:  lea      rcx, [rip + 0x7944]\n0x1400018dc:  call     0x140001710\n0x1400018e1:  nop      \n0x1400018e2:  nop      word ptr cs:[rax + rax]\n0x1400018ed:  nop      dword ptr [rax]\n0x1400018f0:  push     rbp\n0x1400018f1:  push     r15\n0x1400018f3:  push     r14\n0x1400018f5:  push     r13\n0x1400018f7:  push     r12\n0x1400018f9:  push     rdi\n0x1400018fa:  push     rsi\n0x1400018fb:  push     rbx\n0x1400018fc:  sub      rsp, 0x48\n0x140001900:  lea      rbp, [rsp + 0x40]\n0x140001905:  mov      r12d, dword ptr [rip + 0xa794]\n0x14000190c:  test     r12d, r12d\n0x14000190f:  je       0x140001928\n0x140001911:  lea      rsp, [rbp + 8]\n0x140001915:  pop      rbx\n0x140001916:  pop      rsi\n0x140001917:  pop      rdi\n0x140001918:  pop      r12\n0x14000191a:  pop      r13\n0x14000191c:  pop      r14\n0x14000191e:  pop      r15\n0x140001920:  pop      rbp\n0x140001921:  ret      \n0x140001928:  mov      dword ptr [rip + 0xa76e], 1\n0x140001932:  call     0x140002250\n0x140001937:  cdqe     \n0x140001939:  lea      rax, [rax + rax*4]\n0x14000193d:  lea      rax, [rax*8 + 0xf]\n0x140001945:  and      rax, 0xfffffffffffffff0\n0x140001949:  call     0x1400024b0\n0x14000194e:  mov      r13, qword ptr [rip + 0x7dfb]\n0x140001955:  mov      rbx, qword ptr [rip + 0x7e04]\n0x14000195c:  mov      dword ptr [rip + 0xa73e], 0\n0x140001966:  sub      rsp, rax\n0x140001969:  lea      rax, [rsp + 0x30]\n0x14000196e:  mov      qword ptr [rip + 0xa733], rax\n0x140001975:  mov      rax, r13\n0x140001978:  sub      rax, rbx\n0x14000197b:  cmp      rax, 7\n0x14000197f:  jle      0x140001911\n0x140001981:  mov      edx, dword ptr [rbx]\n0x140001983:  cmp      rax, 0xb\n0x140001987:  jg       0x140001b08\n0x14000198d:  mov      eax, dword ptr [rbx]\n0x14000198f:  test     eax, eax\n0x140001991:  jne      0x140001c00\n0x140001997:  mov      eax, dword ptr [rbx + 4]\n0x14000199a:  test     eax, eax\n0x14000199c:  jne      0x140001c00\n0x1400019a2:  mov      edx, dword ptr [rbx + 8]\n0x1400019a5:  cmp      edx, 1\n0x1400019a8:  jne      0x140001c3e\n0x1400019ae:  add      rbx, 0xc\n0x1400019b2:  cmp      rbx, r13\n0x1400019b5:  jae      0x140001911\n0x1400019bb:  mov      r14, qword ptr [rip + 0x7dbe]\n0x1400019c2:  movabs   r15, 0xffffffff7fffffff\n0x1400019cc:  jmp      0x140001a22\n0x1400019d0:  movzx    esi, byte ptr [rdi]\n0x1400019d3:  and      ecx, 0xc0\n0x1400019d9:  test     sil, sil\n0x1400019dc:  jns      0x140001be8\n0x1400019e2:  or       rsi, 0xffffffffffffff00\n0x1400019e9:  sub      rsi, rax\n0x1400019ec:  add      rsi, r9\n0x1400019ef:  test     ecx, ecx\n0x1400019f1:  jne      0x140001a0a\n0x1400019f3:  cmp      rsi, 0xff\n0x1400019fa:  jg       0x140001b4f\n0x140001a00:  cmp      rsi, -0x80\n0x140001a04:  jl       0x140001b4f\n0x140001a0a:  mov      rcx, rdi\n0x140001a0d:  call     0x140001780\n0x140001a12:  mov      byte ptr [rdi], sil\n0x140001a15:  add      rbx, 0xc\n0x140001a19:  cmp      rbx, r13\n0x140001a1c:  jae      0x140001ab0\n0x140001a22:  mov      eax, dword ptr [rbx]\n0x140001a24:  mov      ecx, dword ptr [rbx + 8]\n0x140001a27:  mov      edi, dword ptr [rbx + 4]\n0x140001a2a:  add      rax, r14\n0x140001a2d:  movzx    edx, cl\n0x140001a30:  mov      r9, qword ptr [rax]\n0x140001a33:  add      rdi, r14\n0x140001a36:  cmp      edx, 0x20\n0x140001a39:  je       0x140001b68\n0x140001a3f:  ja       0x140001b30\n0x140001a45:  cmp      edx, 8\n0x140001a48:  je       0x1400019d0\n0x140001a4a:  cmp      edx, 0x10\n0x140001a4d:  jne      0x140001c32\n0x140001a53:  movzx    esi, word ptr [rdi]\n0x140001a56:  and      ecx, 0xc0\n0x140001a5c:  test     si, si\n0x140001a5f:  jns      0x140001bd0\n0x140001a65:  or       rsi, 0xffffffffffff0000\n0x140001a6c:  sub      rsi, rax\n0x140001a6f:  add      rsi, r9\n0x140001a72:  test     ecx, ecx\n0x140001a74:  jne      0x140001a90\n0x140001a76:  cmp      rsi, -0x8000\n0x140001a7d:  jl       0x140001b4f\n0x140001a83:  cmp      rsi, 0xffff\n0x140001a8a:  jg       0x140001b4f\n0x140001a90:  mov      rcx, rdi\n0x140001a93:  add      rbx, 0xc\n0x140001a97:  call     0x140001780\n0x140001a9c:  mov      word ptr [rdi], si\n0x140001a9f:  cmp      rbx, r13\n0x140001aa2:  jb       0x140001a22\n0x140001aa8:  nop      dword ptr [rax + rax]\n0x140001ab0:  mov      edx, dword ptr [rip + 0xa5ee]\n0x140001ab6:  test     edx, edx\n0x140001ab8:  jle      0x140001911\n0x140001abe:  mov      rsi, qword ptr [rip + 0xb773]\n0x140001ac5:  xor      ebx, ebx\n0x140001ac7:  lea      rdi, [rbp - 4]\n0x140001acb:  nop      dword ptr [rax + rax]\n0x140001ad0:  mov      rax, qword ptr [rip + 0xa5d1]\n0x140001ad7:  add      rax, rbx\n0x140001ada:  mov      r8d, dword ptr [rax]\n0x140001add:  test     r8d, r8d\n0x140001ae0:  je       0x140001aef\n0x140001ae2:  mov      rdx, qword ptr [rax + 0x10]\n0x140001ae6:  mov      rcx, qword ptr [rax + 8]\n0x140001aea:  mov      r9, rdi\n0x140001aed:  call  ",
+      "size_bytes": null,
+      "calls_to": [
+        5368715024,
+        5368715136,
+        5368717776,
+        5368717904,
+        5368718096,
+        5368718512
+      ],
+      "called_from": [
+        5368715504,
+        5368715024,
+        5368715136
+      ],
+      "strings_referenced": [
+        "  VirtualProtect failed with code 0x%x",
+        "  VirtualQuery failed for %d bytes at address %p",
+        "Address %p has no image-section",
+        "%d bit pseudo relocation at %p out of range, targeting %p, yielding the value %p."
+      ],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n/* WARNING: Removing unreachable block (ram,0x000140001981) */\n/* WARNING: Removing unreachable block (ram,0x000140001b08) */\n/* WARNING: Removing unreachable block (ram,0x000140001b10) */\n/* WARNING: Removing unreachable block (ram,0x000140001b1e) */\n/* WARNING: Removing unreachable block (ram,0x00014000198d) */\n/* WARNING: Removing unreachable block (ram,0x000140001997) */\n/* WARNING: Removing unreachable block (ram,0x00014000199a) */\n/* WARNING: Removing unreachable block (ram,0x0001400019a2) */\n/* WARNING: Removing unreachable block (ram,0x0001400019ae) */\n/* WARNING: Removing unreachable block (ram,0x0001400019bb) */\n/* WARNING: Removing unreachable block (ram,0x000140001a22) */\n/* WARNING: Removing unreachable block (ram,0x000140001a3f) */\n/* WARNING: Removing unreachable block (ram,0x000140001b30) */\n/* WARNING: Removing unreachable block (ram,0x000140001b39) */\n/* WARNING: Removing unreachable block (ram,0x000140001b4a) */\n/* WARNING: Removing unreachable block (ram,0x000140001bb0) */\n/* WARNING: Removing unreachable block (ram,0x000140001a45) */\n/* WARNING: Removing unreachable block (ram,0x000140001a4a) */\n/* WARNING: Removing unreachable block (ram,0x000140001c32) */\n/* WARNING: Removing unreachable block (ram,0x000140001c3e) */\n/* WARNING: Removing unreachable block (ram,0x000140001c64) */\n/* WARNING: Removing unreachable block (ram,0x000140001c89) */\n/* WARNING: Removing unreachable block (ram,0x000140001a53) */\n/* WARNING: Removing unreachable block (ram,0x000140001bd0) */\n/* WARNING: Removing unreachable block (ram,0x000140001bde) */\n/* WARNING: Removing unreachable block (ram,0x000140001a65) */\n/* WARNING: Removing unreachable block (ram,0x000140001a76) */\n/* WARNING: Removing unreachable block (ram,0x000140001a83) */\n/* WARNING: Removing unreachable block (ram,0x000140001a90) */\n/* WARNING: Removing unreachable block (ram,0x000140001aa8) */\n/* WARNING: Removing unreachable block (ram,0x0001400019d0) */\n/* WARNING: Removing unreachable block (ram,0x000140001be8) */\n/* WARNING: Removing unreachable block (ram,0x000140001bf6) */\n/* WARNING: Removing unreachable block (ram,0x0001400019e2) */\n/* WARNING: Removing unreachable block (ram,0x0001400019f3) */\n/* WARNING: Removing unreachable block (ram,0x000140001a00) */\n/* WARNING: Removing unreachable block (ram,0x000140001b4f) */\n/* WARNING: Removing unreachable block (ram,0x000140001b68) */\n/* WARNING: Removing unreachable block (ram,0x000140001bc0) */\n/* WARNING: Removing unreachable block (ram,0x000140001bca) */\n/* WARNING: Removing unreachable block (ram,0x000140001b74) */\n/* WARNING: Removing unreachable block (ram,0x000140001b8b) */\n/* WARNING: Removing unreachable block (ram,0x000140001b90) */\n/* WARNING: Removing unreachable block (ram,0x000140001b9a) */\n/* WARNING: Removing unreachable block (ram,0x000140001a0a) */\n/* WARNING: Removing unreachable block (ram,0x000140001a15) */\n/* WARNING: Removing unreachable block (ram,0x000140001c00) */\n/* WARNING: Removing unreachable block (ram,0x000140001c09) */\n/* WARNING: Removing unreachable block (ram,0x000140001c10) */\n/* WARNING: Removing unreachable block (ram,0x000140001c2d) */\n/* WARNING: Removing unreachable block (ram,0x000140001ab0) */\n/* WARNING: Removing unreachable block (ram,0x000140001abe) */\n/* WARNING: Removing unreachable block (ram,0x000140001ad0) */\n/* WARNING: Removing unreachable block (ram,0x000140001ae2) */\n/* WARNING: Removing unreachable block (ram,0x000140001aef) */\n/* WARNING: Removing unreachable block (ram,0x000140001b00) */\n/* WARNING: Enum \"SectionFlags\": Some values do not have unique names */\n\nvoid FUN_140001780(uint *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  BOOL BVar1;\n  DWORD DVar2;\n  ulonglong *puVar3;\n  IMAGE_SECTION_HEADER *pIVar4;\n  undefined4 *puVar5;\n  IMAGE_DOS_HEADER *pIVar6;\n  SIZE_T SVar7;\n  ulonglong uVar8;\n  longlong lVar9;\n  uint *in_R8;\n  uint uVar10;\n  PDWORD in_R9;\n  undefined1 auStack_c0 [24];\n  uint *puStack_a8;\n  longlong lStack_a0;\n  IMAGE_SECTION_HEADER *pIStack_98;\n  _MEMORY_BASIC_INFORMATION local_48;\n  \n  lVar9 = (longlong)(int)DAT_14000c0a4;\n  if ((int)DAT_14000c0a4 < 1) goto LAB_1400018b0;\n  in_R9 = (PDWORD)0x0;\n  puVar3 = (ulonglong *)(DAT_14000c0a8 + 0x18);\n  do {\n    in_R8 = (uint *)*puVar3;\n    if ((in_R8 <= param_1) &&\n       (in_R8 = (uint *)((longlong)in_R8 + (ulonglong)*(uint *)(puVar3[1] + 8)), param_1 < in_R8)) {\n      return;\n    }\n    uVar10 = (int)in_R9 + 1;\n    in_R9 = (PDWORD)(ulonglong)uVar10;\n    puVar3 = puVar3 + 5;\n  } while (uVar10 != DAT_14000c0a4);\n  do {\n    pIVar4 = FUN_1400021d0((longlong)param_1);\n    if (pIVar4 == (IMAGE_SECTION_HEADER *)0x0) {\nLAB_1400018d2:\n      FUN_140001710(\"Address %p has no image-section\",param_1,in_R8,in_R9);\n      if (DAT_14000c0a0 == 0) {\n        DAT_14000c0a0 = 1;\n        puStack_a8 = param_1;\n        lStack_a0 = lVar9;\n        pIStack_98 = pIVar4;\n        FUN_140002250();\n        uVar8 = FUN_1400024b0();\n        DAT_14000c0a4 = 0;\n        DAT_14000c0a8 = auStack_c0 + -uVar8;\n      }\n      return;\n    }\n    param_1 = (uint *)(lVar9 * 0x28);\n    puVar5 = (undefined4 *)(DAT_14000c0a8 + (longlong)param_1);\n    *(IMAGE_SECTION_HEADER **)(puVar5 + 8) = pIVar4;\n    *puVar5 = 0;\n    pIVar6 = FUN_140002310();\n    uVar10 = pIVar4->VirtualAddress;\n    *(char **)(DAT_14000c0a8 + 0x18 + (longlong)param_1) = pIVar6->e_magic + uVar10;\n    SVar7 = VirtualQuery(pIVar6->e_magic + uVar10,&local_48,0x30);\n    if (SVar7 == 0) {\n      in_R8 = *(uint **)(DAT_14000c0a8 + 0x18 + (longlong)param_1);\n      FUN_140001710(\"  VirtualQuery failed for %d bytes at address %p\",\n                    (ulonglong)(pIVar4->Misc).PhysicalAddress,in_R8,in_R9);\n      goto LAB_1400018d2;\n    }\n    if (((local_48.Protect - 0x40 & 0xffffffbf) == 0) || ((local_48.Protect - 4 & 0xfffffffb) == 0))\n    {\nLAB_14000184e:\n      DAT_14000c0a4 = DAT_14000c0a4 + 1;\n      return;\n    }\n    in_R8 = (uint *)0x40;\n    if (local_48.Protect == 2) {\n      in_R8 = (uint *)0x4;\n    }\n    param_1 = (uint *)((longlong)param_1 + (longlong)DAT_14000c0a8);\n    *(PVOID *)(param_1 + 2) = local_48.BaseAddress;\n    *(SIZE_T *)(param_1 + 4) = local_48.RegionSize;\n    in_R9 = param_1;\n    BVar1 = VirtualProtect(local_48.BaseAddress,local_48.RegionSize,(DWORD)in_R8,param_1);\n    if (BVar1 != 0) goto LAB_14000184e;\n    DVar2 = GetLastError();\n    FUN_140001710(\"  VirtualProtect failed with code 0x%x\",(ulonglong)DVar2,in_R8,in_R9);\nLAB_1400018b0:\n    lVar9 = 0;\n  } while( true );\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400018f0",
+      "address_int": 5368715504,
+      "name": "sub_1400018f0",
+      "instruction_count": 231,
+      "disassembly": "0x1400018f0:  push     rbp\n0x1400018f1:  push     r15\n0x1400018f3:  push     r14\n0x1400018f5:  push     r13\n0x1400018f7:  push     r12\n0x1400018f9:  push     rdi\n0x1400018fa:  push     rsi\n0x1400018fb:  push     rbx\n0x1400018fc:  sub      rsp, 0x48\n0x140001900:  lea      rbp, [rsp + 0x40]\n0x140001905:  mov      r12d, dword ptr [rip + 0xa794]\n0x14000190c:  test     r12d, r12d\n0x14000190f:  je       0x140001928\n0x140001911:  lea      rsp, [rbp + 8]\n0x140001915:  pop      rbx\n0x140001916:  pop      rsi\n0x140001917:  pop      rdi\n0x140001918:  pop      r12\n0x14000191a:  pop      r13\n0x14000191c:  pop      r14\n0x14000191e:  pop      r15\n0x140001920:  pop      rbp\n0x140001921:  ret      \n0x140001928:  mov      dword ptr [rip + 0xa76e], 1\n0x140001932:  call     0x140002250\n0x140001937:  cdqe     \n0x140001939:  lea      rax, [rax + rax*4]\n0x14000193d:  lea      rax, [rax*8 + 0xf]\n0x140001945:  and      rax, 0xfffffffffffffff0\n0x140001949:  call     0x1400024b0\n0x14000194e:  mov      r13, qword ptr [rip + 0x7dfb]\n0x140001955:  mov      rbx, qword ptr [rip + 0x7e04]\n0x14000195c:  mov      dword ptr [rip + 0xa73e], 0\n0x140001966:  sub      rsp, rax\n0x140001969:  lea      rax, [rsp + 0x30]\n0x14000196e:  mov      qword ptr [rip + 0xa733], rax\n0x140001975:  mov      rax, r13\n0x140001978:  sub      rax, rbx\n0x14000197b:  cmp      rax, 7\n0x14000197f:  jle      0x140001911\n0x140001981:  mov      edx, dword ptr [rbx]\n0x140001983:  cmp      rax, 0xb\n0x140001987:  jg       0x140001b08\n0x14000198d:  mov      eax, dword ptr [rbx]\n0x14000198f:  test     eax, eax\n0x140001991:  jne      0x140001c00\n0x140001997:  mov      eax, dword ptr [rbx + 4]\n0x14000199a:  test     eax, eax\n0x14000199c:  jne      0x140001c00\n0x1400019a2:  mov      edx, dword ptr [rbx + 8]\n0x1400019a5:  cmp      edx, 1\n0x1400019a8:  jne      0x140001c3e\n0x1400019ae:  add      rbx, 0xc\n0x1400019b2:  cmp      rbx, r13\n0x1400019b5:  jae      0x140001911\n0x1400019bb:  mov      r14, qword ptr [rip + 0x7dbe]\n0x1400019c2:  movabs   r15, 0xffffffff7fffffff\n0x1400019cc:  jmp      0x140001a22\n0x1400019d0:  movzx    esi, byte ptr [rdi]\n0x1400019d3:  and      ecx, 0xc0\n0x1400019d9:  test     sil, sil\n0x1400019dc:  jns      0x140001be8\n0x1400019e2:  or       rsi, 0xffffffffffffff00\n0x1400019e9:  sub      rsi, rax\n0x1400019ec:  add      rsi, r9\n0x1400019ef:  test     ecx, ecx\n0x1400019f1:  jne      0x140001a0a\n0x1400019f3:  cmp      rsi, 0xff\n0x1400019fa:  jg       0x140001b4f\n0x140001a00:  cmp      rsi, -0x80\n0x140001a04:  jl       0x140001b4f\n0x140001a0a:  mov      rcx, rdi\n0x140001a0d:  call     0x140001780\n0x140001a12:  mov      byte ptr [rdi], sil\n0x140001a15:  add      rbx, 0xc\n0x140001a19:  cmp      rbx, r13\n0x140001a1c:  jae      0x140001ab0\n0x140001a22:  mov      eax, dword ptr [rbx]\n0x140001a24:  mov      ecx, dword ptr [rbx + 8]\n0x140001a27:  mov      edi, dword ptr [rbx + 4]\n0x140001a2a:  add      rax, r14\n0x140001a2d:  movzx    edx, cl\n0x140001a30:  mov      r9, qword ptr [rax]\n0x140001a33:  add      rdi, r14\n0x140001a36:  cmp      edx, 0x20\n0x140001a39:  je       0x140001b68\n0x140001a3f:  ja       0x140001b30\n0x140001a45:  cmp      edx, 8\n0x140001a48:  je       0x1400019d0\n0x140001a4a:  cmp      edx, 0x10\n0x140001a4d:  jne      0x140001c32\n0x140001a53:  movzx    esi, word ptr [rdi]\n0x140001a56:  and      ecx, 0xc0\n0x140001a5c:  test     si, si\n0x140001a5f:  jns      0x140001bd0\n0x140001a65:  or       rsi, 0xffffffffffff0000\n0x140001a6c:  sub      rsi, rax\n0x140001a6f:  add      rsi, r9\n0x140001a72:  test     ecx, ecx\n0x140001a74:  jne      0x140001a90\n0x140001a76:  cmp      rsi, -0x8000\n0x140001a7d:  jl       0x140001b4f\n0x140001a83:  cmp      rsi, 0xffff\n0x140001a8a:  jg       0x140001b4f\n0x140001a90:  mov      rcx, rdi\n0x140001a93:  add      rbx, 0xc\n0x140001a97:  call     0x140001780\n0x140001a9c:  mov      word ptr [rdi], si\n0x140001a9f:  cmp      rbx, r13\n0x140001aa2:  jb       0x140001a22\n0x140001aa8:  nop      dword ptr [rax + rax]\n0x140001ab0:  mov      edx, dword ptr [rip + 0xa5ee]\n0x140001ab6:  test     edx, edx\n0x140001ab8:  jle      0x140001911\n0x140001abe:  mov      rsi, qword ptr [rip + 0xb773]\n0x140001ac5:  xor      ebx, ebx\n0x140001ac7:  lea      rdi, [rbp - 4]\n0x140001acb:  nop      dword ptr [rax + rax]\n0x140001ad0:  mov      rax, qword ptr [rip + 0xa5d1]\n0x140001ad7:  add      rax, rbx\n0x140001ada:  mov      r8d, dword ptr [rax]\n0x140001add:  test     r8d, r8d\n0x140001ae0:  je       0x140001aef\n0x140001ae2:  mov      rdx, qword ptr [rax + 0x10]\n0x140001ae6:  mov      rcx, qword ptr [rax + 8]\n0x140001aea:  mov      r9, rdi\n0x140001aed:  call     rsi\n0x140001aef:  add      r12d, 1\n0x140001af3:  add      rbx, 0x28\n0x140001af7:  cmp      r12d, dword ptr [rip + 0xa5a6]\n0x140001afe:  jl       0x140001ad0\n0x140001b00:  jmp      0x140001911\n0x140001b08:  test     edx, edx\n0x140001b0a:  jne      0x140001c00\n0x140001b10:  mov      eax, dword ptr [rbx + 4]\n0x140001b13:  mov      edx, eax\n0x140001b15:  or       edx, dword ptr [rbx + 8]\n0x140001b18:  jne      0x14000199a\n0x140001b1e:  add      rbx, 0xc\n0x140001b22:  jmp      0x14000198d\n0x140001b30:  cmp      edx, 0x40\n0x140001b33:  jne      0x140001c32\n0x140001b39:  mov      rsi, qword ptr [rdi]\n0x140001b3c:  sub      rsi, rax\n0x140001b3f:  add      rsi, r9\n0x140001b42:  and      ecx, 0xc0\n0x140001b48:  jne      0x140001bb0\n0x140001b4a:  test     rsi, rsi\n0x140001b4d:  js       0x140001bb0\n0x140001b4f:  mov      qword ptr [rsp + 0x20], rsi\n0x140001b54:  mov      r8, rdi\n0x140001b57:  lea      rcx, [rip + 0x77aa]\n0x140001b5e:  call     0x140001710\n0x140001b63:  nop      dword ptr [rax + rax]\n0x140001b68:  mov      esi, dword ptr [rdi]\n0x140001b6a:  and      ecx, 0xc0\n0x140001b70:  test     esi, esi\n0x140001b72:  jns      0x140001bc0\n0x140001b74:  movabs   r11, 0xffffffff00000000\n0x140001b7e:  or       rsi, r11\n0x140001b81:  sub      rsi, rax\n0x140001b84:  add      rsi, r9\n0x140001b87:  test     ecx, ecx\n0x140001b89:  jne      0x140001b9a\n0x140001b8b:  cmp      rsi, r15\n0x140001b8e:  jle      0x140001b4f\n0x140001b90:  mov      eax, 0xffffffff\n0x140001b95:  cmp      rsi, rax\n0x140001b98:  jg       0x140001b4f\n0x140001b9a:  mov      rcx, rdi\n0x140001b9d:  call     0x140001780\n0x140001ba2:  mov      dword ptr [rdi], esi\n0x140001ba4:  jmp      0x140001a15\n0x140001bb0:  mov      rcx, rdi\n0x140001bb3:  call     0x140001780\n0x140001bb8:  mov      qword ptr [rdi], rsi\n0x140001bbb:  jmp      0x140001a15\n0x140001bc0:  sub      rsi, rax\n0x140001bc3:  add      rsi, r9\n0x140001bc6:  test     ecx, ecx\n0x140001bc8:  je       0x140001b8b\n0x140001bca:  jmp      0x140001b9a\n0x140001bd0:  sub      rsi, rax\n0x140001bd3:  add      rsi, r9\n0x140001bd6:  test     ecx, ecx\n0x140001bd8:  je       0x140001a76\n0x140001bde:  jmp      0x140001a90\n0x140001be8:  sub      rsi, rax\n0x140001beb:  add      rsi, r9\n0x140001bee:  test     ecx, ecx\n0x140001bf0:  je       0x1400019f3\n0x140001bf6:  jmp      0x140001a0a\n0x140001c00:  cmp      rbx, r13\n0x140001c03:  jae      0x140001911\n0x140001c09:  mov      r14, qword ptr [rip + 0x7b70]\n0x140001c10:  mov      esi, dword ptr [rbx + 4]\n0x140001c13:  mov      edi, dword ptr [rbx]\n0x140001c15:  add      rbx, 8\n0x140001c19:  add      rsi, r14\n0x140001c1c:  add      edi, dword ptr [rsi]\n0x140001c1e:  mov      rcx, rsi\n0x140001c21:  call     0x140001780\n0x140001c26:  mov      dword ptr [rsi], edi\n0x140001c28:  cmp      rbx, r13\n0x140001c2b:  jb       0x140001c10\n0x140001c2d:  jmp      0x140001ab0\n0x140001c32:  lea      rcx, [rip + 0x769f]\n0x140001c39:  call     0x140001710\n0x140001c3e:  lea      rcx, [rip + 0x765b]\n0x140001c45:  call     0x140001710\n0x140001c4a:  nop      \n0x140001c4b:  nop      \n0x140001c4c:  nop      \n0x140001c4d:  nop      \n0x140001c4e:  nop      \n0x140001c4f:  nop      \n0x140001c50:  sub      rsp, 0x58\n0x140001c54:  mov      rax, qword ptr [rip + 0xa455]\n0x140001c5b:  unpcklpd xmm2, xmm3\n0x140001c5f:  test     rax, rax\n0x140001c62:  je       0x140001c89\n0x140001c64:  movsd    xmm0, qword ptr [rsp + 0x80]\n0x140001c6d:  mov    ",
+      "size_bytes": null,
+      "calls_to": [
+        5368715024,
+        5368715136,
+        5368717904,
+        5368718512
+      ],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [
+        "%d bit pseudo relocation at %p out of range, targeting %p, yielding the value %p.",
+        "  Unknown pseudo relocation bit size %d.",
+        "  Unknown pseudo relocation protocol version %d."
+      ],
+      "deterministic_patterns": [
+        {
+          "name": "nop_sled",
+          "description": "NOP sequence — may be shellcode alignment, compiler padding, or benign hot-patch space",
+          "severity": "INFO",
+          "evidence": "5+ NOPs starting at 0x140001c4a"
+        }
+      ],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n/* WARNING: Removing unreachable block (ram,0x000140001981) */\n/* WARNING: Removing unreachable block (ram,0x000140001b08) */\n/* WARNING: Removing unreachable block (ram,0x000140001b10) */\n/* WARNING: Removing unreachable block (ram,0x000140001b1e) */\n/* WARNING: Removing unreachable block (ram,0x00014000198d) */\n/* WARNING: Removing unreachable block (ram,0x000140001997) */\n/* WARNING: Removing unreachable block (ram,0x00014000199a) */\n/* WARNING: Removing unreachable block (ram,0x0001400019a2) */\n/* WARNING: Removing unreachable block (ram,0x0001400019ae) */\n/* WARNING: Removing unreachable block (ram,0x0001400019bb) */\n/* WARNING: Removing unreachable block (ram,0x000140001a22) */\n/* WARNING: Removing unreachable block (ram,0x000140001a3f) */\n/* WARNING: Removing unreachable block (ram,0x000140001b30) */\n/* WARNING: Removing unreachable block (ram,0x000140001b39) */\n/* WARNING: Removing unreachable block (ram,0x000140001b4a) */\n/* WARNING: Removing unreachable block (ram,0x000140001bb0) */\n/* WARNING: Removing unreachable block (ram,0x000140001a45) */\n/* WARNING: Removing unreachable block (ram,0x000140001a4a) */\n/* WARNING: Removing unreachable block (ram,0x000140001c32) */\n/* WARNING: Removing unreachable block (ram,0x000140001c3e) */\n/* WARNING: Removing unreachable block (ram,0x000140001c64) */\n/* WARNING: Removing unreachable block (ram,0x000140001c89) */\n/* WARNING: Removing unreachable block (ram,0x000140001a53) */\n/* WARNING: Removing unreachable block (ram,0x000140001bd0) */\n/* WARNING: Removing unreachable block (ram,0x000140001bde) */\n/* WARNING: Removing unreachable block (ram,0x000140001a65) */\n/* WARNING: Removing unreachable block (ram,0x000140001a76) */\n/* WARNING: Removing unreachable block (ram,0x000140001a83) */\n/* WARNING: Removing unreachable block (ram,0x000140001a90) */\n/* WARNING: Removing unreachable block (ram,0x000140001aa8) */\n/* WARNING: Removing unreachable block (ram,0x0001400019d0) */\n/* WARNING: Removing unreachable block (ram,0x000140001be8) */\n/* WARNING: Removing unreachable block (ram,0x000140001bf6) */\n/* WARNING: Removing unreachable block (ram,0x0001400019e2) */\n/* WARNING: Removing unreachable block (ram,0x0001400019f3) */\n/* WARNING: Removing unreachable block (ram,0x000140001a00) */\n/* WARNING: Removing unreachable block (ram,0x000140001b4f) */\n/* WARNING: Removing unreachable block (ram,0x000140001b68) */\n/* WARNING: Removing unreachable block (ram,0x000140001bc0) */\n/* WARNING: Removing unreachable block (ram,0x000140001bca) */\n/* WARNING: Removing unreachable block (ram,0x000140001b74) */\n/* WARNING: Removing unreachable block (ram,0x000140001b8b) */\n/* WARNING: Removing unreachable block (ram,0x000140001b90) */\n/* WARNING: Removing unreachable block (ram,0x000140001b9a) */\n/* WARNING: Removing unreachable block (ram,0x000140001a0a) */\n/* WARNING: Removing unreachable block (ram,0x000140001a15) */\n/* WARNING: Removing unreachable block (ram,0x000140001c00) */\n/* WARNING: Removing unreachable block (ram,0x000140001c09) */\n/* WARNING: Removing unreachable block (ram,0x000140001c10) */\n/* WARNING: Removing unreachable block (ram,0x000140001c2d) */\n/* WARNING: Removing unreachable block (ram,0x000140001ab0) */\n/* WARNING: Removing unreachable block (ram,0x000140001abe) */\n/* WARNING: Removing unreachable block (ram,0x000140001ad0) */\n/* WARNING: Removing unreachable block (ram,0x000140001ae2) */\n/* WARNING: Removing unreachable block (ram,0x000140001aef) */\n/* WARNING: Removing unreachable block (ram,0x000140001b00) */\n\nvoid FUN_1400018f0(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  ulonglong uVar1;\n  undefined1 auStack_58 [24];\n  \n  if (DAT_14000c0a0 == 0) {\n    DAT_14000c0a0 = 1;\n    FUN_140002250();\n    uVar1 = FUN_1400024b0();\n    DAT_14000c0a4 = 0;\n    DAT_14000c0a8 = auStack_58 + -uVar1;\n  }\n  return;\n}"
+      },
+      "ai": {
+        "summary": "Deterministic analysis matched 1 behavioral pattern(s): nop_sled. These heuristics require analyst validation.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [
+          "NOP sequence — may be shellcode alignment, compiler padding, or benign hot-patch space"
+        ],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400021d0",
+      "address_int": 5368717776,
+      "name": "sub_1400021d0",
+      "instruction_count": 33,
+      "disassembly": "0x1400021d0:  mov      rdx, qword ptr [rip + 0x75a9]\n0x1400021d7:  xor      eax, eax\n0x1400021d9:  cmp      word ptr [rdx], 0x5a4d\n0x1400021de:  jne      0x1400021f0\n0x1400021e0:  movsxd   r8, dword ptr [rdx + 0x3c]\n0x1400021e4:  add      r8, rdx\n0x1400021e7:  cmp      dword ptr [r8], 0x4550\n0x1400021ee:  je       0x1400021f8\n0x1400021f0:  ret      \n0x1400021f8:  cmp      word ptr [r8 + 0x18], 0x20b\n0x1400021ff:  jne      0x1400021f0\n0x140002201:  movzx    eax, word ptr [r8 + 0x14]\n0x140002206:  sub      rcx, rdx\n0x140002209:  lea      rax, [r8 + rax + 0x18]\n0x14000220e:  movzx    r8d, word ptr [r8 + 6]\n0x140002213:  test     r8w, r8w\n0x140002217:  je       0x14000224d\n0x140002219:  lea      edx, [r8 - 1]\n0x14000221d:  lea      rdx, [rdx + rdx*4]\n0x140002221:  lea      r9, [rax + rdx*8 + 0x28]\n0x140002226:  nop      word ptr cs:[rax + rax]\n0x140002230:  mov      r8d, dword ptr [rax + 0xc]\n0x140002234:  mov      rdx, r8\n0x140002237:  cmp      rcx, r8\n0x14000223a:  jb       0x140002244\n0x14000223c:  add      edx, dword ptr [rax + 8]\n0x14000223f:  cmp      rcx, rdx\n0x140002242:  jb       0x1400021f0\n0x140002244:  add      rax, 0x28\n0x140002248:  cmp      rax, r9\n0x14000224b:  jne      0x140002230\n0x14000224d:  xor      eax, eax\n0x14000224f:  ret      ",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368715024,
+        5368715136
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n/* WARNING: Enum \"SectionFlags\": Some values do not have unique names */\n\nIMAGE_SECTION_HEADER * FUN_1400021d0(longlong param_1)\n\n{\n  IMAGE_SECTION_HEADER *pIVar1;\n  \n  pIVar1 = &IMAGE_SECTION_HEADER_140000188;\n  while ((param_1 - 0x140000000U < (ulonglong)(uint)pIVar1->VirtualAddress ||\n         ((ulonglong)(pIVar1->VirtualAddress + (pIVar1->Misc).PhysicalAddress) <=\n          param_1 - 0x140000000U))) {\n    pIVar1 = pIVar1 + 1;\n    if (pIVar1 == (IMAGE_SECTION_HEADER *)&DAT_140000318) {\n      return (IMAGE_SECTION_HEADER *)0x0;\n    }\n  }\n  return pIVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140002250",
+      "address_int": 5368717904,
+      "name": "sub_140002250",
+      "instruction_count": 15,
+      "disassembly": "0x140002250:  mov      rax, qword ptr [rip + 0x7529]\n0x140002257:  xor      ecx, ecx\n0x140002259:  cmp      word ptr [rax], 0x5a4d\n0x14000225e:  jne      0x14000226f\n0x140002260:  movsxd   rdx, dword ptr [rax + 0x3c]\n0x140002264:  add      rax, rdx\n0x140002267:  cmp      dword ptr [rax], 0x4550\n0x14000226d:  je       0x140002278\n0x14000226f:  mov      eax, ecx\n0x140002271:  ret      \n0x140002278:  cmp      word ptr [rax + 0x18], 0x20b\n0x14000227e:  jne      0x14000226f\n0x140002280:  movzx    ecx, word ptr [rax + 6]\n0x140002284:  mov      eax, ecx\n0x140002286:  ret      ",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368715504,
+        5368715024,
+        5368715136
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n/* WARNING: Removing unreachable block (ram,0x00014000226f) */\n\nword FUN_140002250(void)\n\n{\n  return 10;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140002310",
+      "address_int": 5368718096,
+      "name": "sub_140002310",
+      "instruction_count": 14,
+      "disassembly": "0x140002310:  mov      rax, qword ptr [rip + 0x7469]\n0x140002317:  xor      edx, edx\n0x140002319:  cmp      word ptr [rax], 0x5a4d\n0x14000231e:  jne      0x14000232f\n0x140002320:  movsxd   rcx, dword ptr [rax + 0x3c]\n0x140002324:  add      rcx, rax\n0x140002327:  cmp      dword ptr [rcx], 0x4550\n0x14000232d:  je       0x140002338\n0x14000232f:  mov      rax, rdx\n0x140002332:  ret      \n0x140002338:  cmp      word ptr [rcx + 0x18], 0x20b\n0x14000233e:  cmove    rdx, rax\n0x140002342:  mov      rax, rdx\n0x140002345:  ret      ",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368715024,
+        5368715136
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n/* WARNING: Removing unreachable block (ram,0x00014000232f) */\n\nIMAGE_DOS_HEADER * FUN_140002310(void)\n\n{\n  return &IMAGE_DOS_HEADER_140000000;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400024b0",
+      "address_int": 5368718512,
+      "name": "sub_1400024b0",
+      "instruction_count": 15,
+      "disassembly": "0x1400024b0:  push     rcx\n0x1400024b1:  push     rax\n0x1400024b2:  cmp      rax, 0x1000\n0x1400024b8:  lea      rcx, [rsp + 0x18]\n0x1400024bd:  jb       0x1400024d8\n0x1400024bf:  sub      rcx, 0x1000\n0x1400024c6:  or       qword ptr [rcx], 0\n0x1400024ca:  sub      rax, 0x1000\n0x1400024d0:  cmp      rax, 0x1000\n0x1400024d6:  ja       0x1400024bf\n0x1400024d8:  sub      rcx, rax\n0x1400024db:  or       qword ptr [rcx], 0\n0x1400024df:  pop      rax\n0x1400024e0:  pop      rcx\n0x1400024e1:  ret      ",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368715504,
+        5368715024,
+        5368715136
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nulonglong FUN_1400024b0(void)\n\n{\n  ulonglong in_RAX;\n  ulonglong uVar1;\n  undefined8 *puVar2;\n  undefined8 local_res8 [4];\n  \n  puVar2 = local_res8;\n  uVar1 = in_RAX;\n  if (0xfff < in_RAX) {\n    do {\n      puVar2 = puVar2 + -0x200;\n      *puVar2 = *puVar2;\n      uVar1 = uVar1 - 0x1000;\n    } while (0x1000 < uVar1);\n  }\n  *(undefined8 *)((longlong)puVar2 - uVar1) = *(undefined8 *)((longlong)puVar2 - uVar1);\n  return in_RAX;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400024f0",
+      "address_int": 5368718576,
+      "name": "sub_1400024f0",
+      "instruction_count": 23,
+      "disassembly": "0x1400024f0:  push     rdi\n0x1400024f1:  push     rsi\n0x1400024f2:  push     rbx\n0x1400024f3:  sub      rsp, 0x30\n0x1400024f7:  mov      rdi, r8\n0x1400024fa:  mov      rbx, rcx\n0x1400024fd:  mov      rsi, rdx\n0x140002500:  call     0x140007390\n0x140002505:  mov      qword ptr [rsp + 0x20], rdi\n0x14000250a:  mov      r9, rsi\n0x14000250d:  xor      r8d, r8d\n0x140002510:  mov      rdx, rbx\n0x140002513:  mov      ecx, 0x6000\n0x140002518:  call     0x140004040\n0x14000251d:  mov      rcx, rbx\n0x140002520:  mov      esi, eax\n0x140002522:  call     0x140007400\n0x140002527:  mov      eax, esi\n0x140002529:  add      rsp, 0x30\n0x14000252d:  pop      rbx\n0x14000252e:  pop      rsi\n0x14000252f:  pop      rdi\n0x140002530:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368725568,
+        5368738704,
+        5368738816
+      ],
+      "called_from": [
+        5368740736
+      ],
+      "strings_referenced": [
+        "AWAVAUATUWVSH"
+      ],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nint FUN_1400024f0(FILE *param_1,byte *param_2,ulonglong *param_3)\n\n{\n  int iVar1;\n  \n  FUN_140007390(param_1);\n  iVar1 = FUN_140004040(0x6000,param_1,0,param_2,param_3);\n  FUN_140007400(param_1);\n  return iVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140002630",
+      "address_int": 5368718896,
+      "name": "sub_140002630",
+      "instruction_count": 28,
+      "disassembly": "0x140002630:  push     rbx\n0x140002631:  sub      rsp, 0x20\n0x140002635:  mov      rbx, rdx\n0x140002638:  mov      edx, dword ptr [rdx + 8]\n0x14000263b:  test     dh, 0x40\n0x14000263e:  jne      0x140002648\n0x140002640:  mov      eax, dword ptr [rbx + 0x24]\n0x140002643:  cmp      dword ptr [rbx + 0x28], eax\n0x140002646:  jle      0x14000265a\n0x140002648:  mov      rax, qword ptr [rbx]\n0x14000264b:  and      dh, 0x20\n0x14000264e:  jne      0x140002670\n0x140002650:  movsxd   rdx, dword ptr [rbx + 0x24]\n0x140002654:  mov      byte ptr [rax + rdx], cl\n0x140002657:  mov      eax, dword ptr [rbx + 0x24]\n0x14000265a:  add      eax, 1\n0x14000265d:  mov      dword ptr [rbx + 0x24], eax\n0x140002660:  add      rsp, 0x20\n0x140002664:  pop      rbx\n0x140002665:  ret      \n0x140002670:  mov      rdx, rax\n0x140002673:  call     0x140007a40\n0x140002678:  mov      eax, dword ptr [rbx + 0x24]\n0x14000267b:  add      eax, 1\n0x14000267e:  mov      dword ptr [rbx + 0x24], eax\n0x140002681:  add      rsp, 0x20\n0x140002685:  pop      rbx\n0x140002686:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368740416
+      ],
+      "called_from": [
+        5368725568
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid FUN_140002630(int param_1,undefined8 *param_2)\n\n{\n  int iVar1;\n  \n  if (((*(uint *)(param_2 + 1) & 0x4000) != 0) ||\n     (iVar1 = *(int *)((longlong)param_2 + 0x24), iVar1 < *(int *)(param_2 + 5))) {\n    if ((*(uint *)(param_2 + 1) & 0x2000) != 0) {\n      fputc(param_1,(FILE *)*param_2);\n      *(int *)((longlong)param_2 + 0x24) = *(int *)((longlong)param_2 + 0x24) + 1;\n      return;\n    }\n    *(char *)((longlong)&((FILE *)*param_2)->_ptr + (longlong)*(int *)((longlong)param_2 + 0x24)) =\n         (char)param_1;\n    iVar1 = *(int *)((longlong)param_2 + 0x24);\n  }\n  *(int *)((longlong)param_2 + 0x24) = iVar1 + 1;\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007390",
+      "address_int": 5368738704,
+      "name": "sub_140007390",
+      "instruction_count": 28,
+      "disassembly": "0x140007390:  push     rbx\n0x140007391:  sub      rsp, 0x20\n0x140007395:  mov      rbx, rcx\n0x140007398:  xor      ecx, ecx\n0x14000739a:  call     0x140007480\n0x14000739f:  cmp      rbx, rax\n0x1400073a2:  jb       0x1400073b3\n0x1400073a4:  mov      ecx, 0x13\n0x1400073a9:  call     0x140007480\n0x1400073ae:  cmp      rbx, rax\n0x1400073b1:  jbe      0x1400073c8\n0x1400073b3:  lea      rcx, [rbx + 0x30]\n0x1400073b7:  add      rsp, 0x20\n0x1400073bb:  pop      rbx\n0x1400073bc:  jmp      qword ptr [rip + 0x5e2d]\n0x1400073c8:  xor      ecx, ecx\n0x1400073ca:  call     0x140007480\n0x1400073cf:  mov      rdx, rax\n0x1400073d2:  mov      rax, rbx\n0x1400073d5:  sub      rax, rdx\n0x1400073d8:  sar      rax, 4\n0x1400073dc:  imul     eax, eax, 0xaaaaaaab\n0x1400073e2:  lea      ecx, [rax + 0x10]\n0x1400073e5:  call     0x140007a08\n0x1400073ea:  or       dword ptr [rbx + 0x18], 0x8000\n0x1400073f1:  add      rsp, 0x20\n0x1400073f5:  pop      rbx\n0x1400073f6:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368738944,
+        5368740360
+      ],
+      "called_from": [
+        5368718576
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid FUN_140007390(FILE *param_1)\n\n{\n  FILE *pFVar1;\n  \n  pFVar1 = FUN_140007480(0);\n  if (pFVar1 <= param_1) {\n    pFVar1 = FUN_140007480(0x13);\n    if (param_1 <= pFVar1) {\n      pFVar1 = FUN_140007480(0);\n      _lock((int)((longlong)param_1 - (longlong)pFVar1 >> 4) * -0x55555555 + 0x10);\n      param_1->_flag = param_1->_flag | 0x8000;\n      return;\n    }\n  }\n                    /* WARNING: Could not recover jumptable at 0x0001400073bc. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 1));\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007400",
+      "address_int": 5368738816,
+      "name": "sub_140007400",
+      "instruction_count": 26,
+      "disassembly": "0x140007400:  push     rbx\n0x140007401:  sub      rsp, 0x20\n0x140007405:  mov      rbx, rcx\n0x140007408:  xor      ecx, ecx\n0x14000740a:  call     0x140007480\n0x14000740f:  cmp      rbx, rax\n0x140007412:  jb       0x140007423\n0x140007414:  mov      ecx, 0x13\n0x140007419:  call     0x140007480\n0x14000741e:  cmp      rbx, rax\n0x140007421:  jbe      0x140007438\n0x140007423:  lea      rcx, [rbx + 0x30]\n0x140007427:  add      rsp, 0x20\n0x14000742b:  pop      rbx\n0x14000742c:  jmp      qword ptr [rip + 0x5ddd]\n0x140007438:  and      dword ptr [rbx + 0x18], 0xffff7fff\n0x14000743f:  xor      ecx, ecx\n0x140007441:  call     0x140007480\n0x140007446:  sub      rbx, rax\n0x140007449:  sar      rbx, 4\n0x14000744d:  imul     ebx, ebx, 0xaaaaaaab\n0x140007453:  lea      ecx, [rbx + 0x10]\n0x140007456:  add      rsp, 0x20\n0x14000745a:  pop      rbx\n0x14000745b:  jmp      0x140007a18\n0x140007a18:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [
+        5368738944
+      ],
+      "called_from": [
+        5368718576
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid FUN_140007400(FILE *param_1)\n\n{\n  FILE *pFVar1;\n  \n  pFVar1 = FUN_140007480(0);\n  if (pFVar1 <= param_1) {\n    pFVar1 = FUN_140007480(0x13);\n    if (param_1 <= pFVar1) {\n      param_1->_flag = param_1->_flag & 0xffff7fff;\n      pFVar1 = FUN_140007480(0);\n      _unlock((int)((longlong)param_1 - (longlong)pFVar1 >> 4) * -0x55555555 + 0x10);\n      return;\n    }\n  }\n                    /* WARNING: Could not recover jumptable at 0x00014000742c. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + 1));\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007470",
+      "address_int": 5368738928,
+      "name": "sub_140007470",
+      "instruction_count": 3,
+      "disassembly": "0x140007470:  mov      rax, rcx\n0x140007473:  xchg     qword ptr [rip + 0x56e6], rax\n0x14000747a:  ret      ",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nundefined8 FUN_140007470(undefined8 param_1)\n\n{\n  undefined8 uVar1;\n  \n  uVar1 = DAT_14000cb60;\n  LOCK();\n  DAT_14000cb60 = param_1;\n  UNLOCK();\n  return uVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007480",
+      "address_int": 5368738944,
+      "name": "sub_140007480",
+      "instruction_count": 11,
+      "disassembly": "0x140007480:  push     rbx\n0x140007481:  sub      rsp, 0x20\n0x140007485:  mov      ebx, ecx\n0x140007487:  call     0x1400079d0\n0x14000748c:  mov      ecx, ebx\n0x14000748e:  lea      rdx, [rcx + rcx*2]\n0x140007492:  shl      rdx, 4\n0x140007496:  add      rax, rdx\n0x140007499:  add      rsp, 0x20\n0x14000749d:  pop      rbx\n0x14000749e:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368740304
+      ],
+      "called_from": [
+        5368715024,
+        5368738704,
+        5368738816
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nFILE * FUN_140007480(uint param_1)\n\n{\n  FILE *pFVar1;\n  \n  pFVar1 = __iob_func();\n  return pFVar1 + param_1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400079d0",
+      "address_int": 5368740304,
+      "name": "sub_1400079d0",
+      "instruction_count": 1,
+      "disassembly": "0x1400079d0:  jmp      qword ptr [rip + 0x58aa]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368738944
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nFILE * __cdecl __iob_func(void)\n\n{\n  FILE *pFVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001400079d0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pFVar1 = __iob_func();\n  return pFVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400079e8",
+      "address_int": 5368740328,
+      "name": "sub_1400079e8",
+      "instruction_count": 1,
+      "disassembly": "0x1400079e8:  jmp      qword ptr [rip + 0x58aa]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid __cdecl _amsg_exit(int param_1)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x0001400079e8. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  _amsg_exit(param_1);\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400079f0",
+      "address_int": 5368740336,
+      "name": "sub_1400079f0",
+      "instruction_count": 1,
+      "disassembly": "0x1400079f0:  jmp      qword ptr [rip + 0x58aa]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid __cdecl _cexit(void)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x0001400079f0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  _cexit();\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x1400079f8",
+      "address_int": 5368740344,
+      "name": "sub_1400079f8",
+      "instruction_count": 1,
+      "disassembly": "0x1400079f8:  jmp      qword ptr [rip + 0x58b2]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368725568
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nint * __cdecl _errno(void)\n\n{\n  int *piVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001400079f8. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  piVar1 = _errno();\n  return piVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a00",
+      "address_int": 5368740352,
+      "name": "sub_140007a00",
+      "instruction_count": 1,
+      "disassembly": "0x140007a00:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid _initterm(void)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x000140007a00. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  _initterm();\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a08",
+      "address_int": 5368740360,
+      "name": "sub_140007a08",
+      "instruction_count": 1,
+      "disassembly": "0x140007a08:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368738704
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid __cdecl _lock(int _File)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x000140007a08. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  _lock(_File);\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a10",
+      "address_int": 5368740368,
+      "name": "sub_140007a10",
+      "instruction_count": 1,
+      "disassembly": "0x140007a10:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368714496
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n_onexit_t __cdecl _onexit(_onexit_t _Func)\n\n{\n  _onexit_t p_Var1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000140007a10. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  p_Var1 = _onexit(_Func);\n  return p_Var1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a20",
+      "address_int": 5368740384,
+      "name": "sub_140007a20",
+      "instruction_count": 1,
+      "disassembly": "0x140007a20:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368715024
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid __cdecl abort(void)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x000140007a20. Too many branches */\n                    /* WARNING: Subroutine does not return */\n                    /* WARNING: Treating indirect jump as call */\n  abort();\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a30",
+      "address_int": 5368740400,
+      "name": "sub_140007a30",
+      "instruction_count": 1,
+      "disassembly": "0x140007a30:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid __cdecl exit(int _Code)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x000140007a30. Too many branches */\n                    /* WARNING: Subroutine does not return */\n                    /* WARNING: Treating indirect jump as call */\n  exit(_Code);\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a40",
+      "address_int": 5368740416,
+      "name": "sub_140007a40",
+      "instruction_count": 1,
+      "disassembly": "0x140007a40:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368725568,
+        5368718896
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nint __cdecl fputc(int _Ch,FILE *_File)\n\n{\n  int iVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000140007a40. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  iVar1 = fputc(_Ch,_File);\n  return iVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a50",
+      "address_int": 5368740432,
+      "name": "sub_140007a50",
+      "instruction_count": 1,
+      "disassembly": "0x140007a50:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368715024
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nsize_t __cdecl fwrite(void *_Str,size_t _Size,size_t _Count,FILE *_File)\n\n{\n  size_t sVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000140007a50. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  sVar1 = fwrite(_Str,_Size,_Count,_File);\n  return sVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a60",
+      "address_int": 5368740448,
+      "name": "sub_140007a60",
+      "instruction_count": 1,
+      "disassembly": "0x140007a60:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid * __cdecl malloc(size_t _Size)\n\n{\n  void *pvVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000140007a60. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pvVar1 = malloc(_Size);\n  return pvVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a68",
+      "address_int": 5368740456,
+      "name": "sub_140007a68",
+      "instruction_count": 1,
+      "disassembly": "0x140007a68:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid * __cdecl memcpy(void *_Dst,void *_Src,size_t _Size)\n\n{\n  void *pvVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000140007a68. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pvVar1 = memcpy(_Dst,_Src,_Size);\n  return pvVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a88",
+      "address_int": 5368740488,
+      "name": "sub_140007a88",
+      "instruction_count": 1,
+      "disassembly": "0x140007a88:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368713600,
+        5368741008,
+        5368740816
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nsize_t __cdecl strlen(char *_Str)\n\n{\n  size_t sVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000140007a88. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  sVar1 = strlen(_Str);\n  return sVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007a98",
+      "address_int": 5368740504,
+      "name": "sub_140007a98",
+      "instruction_count": 1,
+      "disassembly": "0x140007a98:  jmp      qword ptr [rip + 0x58ba]",
+      "size_bytes": null,
+      "calls_to": [],
+      "called_from": [
+        5368715024
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nint __cdecl vfprintf(FILE *_File,char *_Format,va_list _ArgList)\n\n{\n  int iVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000140007a98. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  iVar1 = vfprintf(_File,_Format,_ArgList);\n  return iVar1;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007b80",
+      "address_int": 5368740736,
+      "name": "sub_140007b80",
+      "instruction_count": 19,
+      "disassembly": "0x140007b80:  push     rsi\n0x140007b81:  push     rbx\n0x140007b82:  sub      rsp, 0x38\n0x140007b86:  lea      rsi, [rsp + 0x58]\n0x140007b8b:  mov      qword ptr [rsp + 0x58], rdx\n0x140007b90:  mov      rbx, rcx\n0x140007b93:  mov      ecx, 1\n0x140007b98:  mov      qword ptr [rsp + 0x60], r8\n0x140007b9d:  mov      qword ptr [rsp + 0x68], r9\n0x140007ba2:  mov      qword ptr [rsp + 0x28], rsi\n0x140007ba7:  call     qword ptr [rip + 0x503]\n0x140007bad:  mov      r8, rsi\n0x140007bb0:  mov      rdx, rbx\n0x140007bb3:  mov      rcx, rax\n0x140007bb6:  call     0x1400024f0\n0x140007bbb:  add      rsp, 0x38\n0x140007bbf:  pop      rbx\n0x140007bc0:  pop      rsi\n0x140007bc1:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368718576
+      ],
+      "called_from": [
+        5368740816
+      ],
+      "strings_referenced": [],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\nvoid FUN_140007b80(byte *param_1,ulonglong param_2,undefined8 param_3,undefined8 param_4)\n\n{\n  FILE *pFVar1;\n  ulonglong local_res10;\n  undefined8 local_res18;\n  undefined8 local_res20;\n  \n  local_res10 = param_2;\n  local_res18 = param_3;\n  local_res20 = param_4;\n  pFVar1 = (FILE *)(*(code *)PTR_FUN_1400080b0)(1);\n  FUN_1400024f0(pFVar1,param_1,&local_res10);\n  return;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    },
+    {
+      "address": "0x140007c90",
+      "address_int": 5368741008,
+      "name": "sub_140007c90",
+      "instruction_count": 110,
+      "disassembly": "0x140007c90:  push     rbp\n0x140007c91:  push     rdi\n0x140007c92:  push     rsi\n0x140007c93:  push     rbx\n0x140007c94:  sub      rsp, 0x78\n0x140007c98:  call     0x140001500\n0x140007c9d:  mov      rsi, qword ptr [rip + 0x56cc]\n0x140007ca4:  mov      rax, qword ptr gs:[0x60]\n0x140007cad:  mov      rax, qword ptr [rax + 0x18]\n0x140007cb1:  mov      rbp, qword ptr [rax + 0x18]\n0x140007cb5:  mov      rdi, rbp\n0x140007cb8:  nop      dword ptr [rax + rax]\n0x140007cc0:  mov      rdi, qword ptr [rdi]\n0x140007cc3:  cmp      qword ptr [rdi + 0x30], 0\n0x140007cc8:  je       0x140007d38\n0x140007cca:  mov      rcx, qword ptr [rdi + 0x60]\n0x140007cce:  xor      eax, eax\n0x140007cd0:  lea      r8, [rsp + 0x30]\n0x140007cd5:  movzx    edx, word ptr [rcx]\n0x140007cd8:  test     dx, dx\n0x140007cdb:  jne      0x140007ce6\n0x140007cdd:  jmp      0x140007cf7\n0x140007ce0:  cmp      rax, 0x3f\n0x140007ce4:  je       0x140007cf7\n0x140007ce6:  mov      byte ptr [r8 + rax], dl\n0x140007cea:  add      rax, 1\n0x140007cee:  movzx    edx, word ptr [rcx + rax*2]\n0x140007cf2:  test     dx, dx\n0x140007cf5:  jne      0x140007ce0\n0x140007cf7:  mov      rcx, r8\n0x140007cfa:  mov      byte ptr [rsp + rax + 0x30], 0\n0x140007cff:  call     rsi\n0x140007d01:  mov      rcx, rax\n0x140007d04:  mov      rbx, rax\n0x140007d07:  call     0x140007a88\n0x140007d0c:  test     rax, rax\n0x140007d0f:  je       0x140007d38\n0x140007d11:  lea      r8, [rbx + rax]\n0x140007d15:  mov      rdx, rbx\n0x140007d18:  mov      eax, 0x35\n0x140007d1d:  nop      dword ptr [rax]\n0x140007d20:  movsx    ecx, byte ptr [rdx]\n0x140007d23:  add      rdx, 1\n0x140007d27:  lea      ecx, [rcx + rax*2]\n0x140007d2a:  add      eax, ecx\n0x140007d2c:  cmp      rdx, r8\n0x140007d2f:  jne      0x140007d20\n0x140007d31:  cmp      eax, 0x35c206b\n0x140007d36:  je       0x140007d3d\n0x140007d38:  cmp      rdi, rbp\n0x140007d3b:  jne      0x140007cc0\n0x140007d3d:  mov      rbx, qword ptr [rdi + 0x30]\n0x140007d41:  mov      edx, 0xf0b03804\n0x140007d46:  mov      rcx, rbx\n0x140007d49:  call     0x140007bd0\n0x140007d4e:  mov      edx, 0x1ac1e8e1\n0x140007d53:  mov      rcx, rbx\n0x140007d56:  mov      rsi, rax\n0x140007d59:  call     0x140007bd0\n0x140007d5e:  lea      rcx, [rip + 0x12b8]\n0x140007d65:  mov      rbx, rax\n0x140007d68:  call     rsi\n0x140007d6a:  lea      rdx, [rip + 0x12b9]\n0x140007d71:  mov      rsi, rax\n0x140007d74:  mov      rcx, rax\n0x140007d77:  call     rbx\n0x140007d79:  mov      rcx, rsi\n0x140007d7c:  lea      rdx, [rip + 0x12b4]\n0x140007d83:  mov      rdi, rax\n0x140007d86:  call     rbx\n0x140007d88:  mov      rcx, rsi\n0x140007d8b:  lea      rdx, [rip + 0x12b2]\n0x140007d92:  lea      rsi, [rip + 0x327]\n0x140007d99:  mov      rbp, rax\n0x140007d9c:  call     rbx\n0x140007d9e:  xor      ecx, ecx\n0x140007da0:  mov      r9d, 0x40\n0x140007da6:  mov      r8d, 0x3000\n0x140007dac:  mov      rbx, rax\n0x140007daf:  mov      edx, 0x13a\n0x140007db4:  call     rdi\n0x140007db6:  xor      r9d, r9d\n0x140007db9:  xor      edx, edx\n0x140007dbb:  mov      r8, rax\n0x140007dbe:  mov      rax, qword ptr [rip + 0x2fb]\n0x140007dc5:  lea      rdi, [r8 + 8]\n0x140007dc9:  mov      qword ptr [r8], rax\n0x140007dcc:  mov      rax, qword ptr [rip + 0x41f]\n0x140007dd3:  and      rdi, 0xfffffffffffffff8\n0x140007dd7:  mov      qword ptr [r8 + 0x132], rax\n0x140007dde:  mov      rax, r8\n0x140007de1:  sub      rax, rdi\n0x140007de4:  sub      rsi, rax\n0x140007de7:  add      eax, 0x13a\n0x140007dec:  shr      eax, 3\n0x140007def:  mov      ecx, eax\n0x140007df1:  rep movsq qword ptr [rdi], qword ptr [rsi]\n0x140007df4:  mov      dword ptr [rsp + 0x20], 0\n0x140007dfc:  mov      qword ptr [rsp + 0x28], 0\n0x140007e05:  call     rbp\n0x140007e07:  mov      edx, 0xffffffff\n0x140007e0c:  mov      rcx, rax\n0x140007e0f:  call     rbx\n0x140007e11:  xor      eax, eax\n0x140007e13:  add      rsp, 0x78\n0x140007e17:  pop      rbx\n0x140007e18:  pop      rsi\n0x140007e19:  pop      rdi\n0x140007e1a:  pop      rbp\n0x140007e1b:  ret      ",
+      "size_bytes": null,
+      "calls_to": [
+        5368714496,
+        5368740488,
+        5368740816
+      ],
+      "called_from": [
+        5368713600
+      ],
+      "strings_referenced": [
+        "AVAUATUWVSH",
+        "kernel32.dll",
+        "VirtualAlloc",
+        "CreateThread",
+        "WaitForSingleObject",
+        "=^..^="
+      ],
+      "deterministic_patterns": [],
+      "decompilation": {
+        "language": "c",
+        "backend": "ghidra",
+        "confidence": "reconstructed",
+        "warning": "Ghidra reconstructed C-like code from machine instructions. It is not the original source; types, names, and structure still require review.",
+        "code": "\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nundefined8 FUN_140007c90(undefined8 param_1,undefined8 param_2,LPSTR param_3,undefined8 param_4)\n\n{\n  char cVar1;\n  short sVar2;\n  longlong *plVar3;\n  short *psVar4;\n  LPSTR _Str;\n  size_t sVar5;\n  code *pcVar6;\n  code *pcVar7;\n  undefined8 uVar8;\n  code *pcVar9;\n  undefined8 *puVar10;\n  longlong lVar11;\n  int iVar12;\n  ulonglong uVar13;\n  undefined8 *puVar14;\n  longlong *plVar15;\n  undefined8 *puVar16;\n  longlong unaff_GS_OFFSET;\n  CHAR local_68 [72];\n  \n  FUN_140001500();\n  plVar3 = *(longlong **)(*(longlong *)(*(longlong *)(unaff_GS_OFFSET + 0x60) + 0x18) + 0x18);\n  plVar15 = plVar3;\n  do {\n    plVar15 = (longlong *)*plVar15;\n    if (plVar15[6] != 0) {\n      psVar4 = (short *)plVar15[0xc];\n      lVar11 = 0;\n      param_3 = local_68;\n      sVar2 = *psVar4;\n      if (sVar2 != 0) {\n        do {\n          param_3[lVar11] = (CHAR)sVar2;\n          lVar11 = lVar11 + 1;\n          sVar2 = psVar4[lVar11];\n          if (sVar2 == 0) break;\n        } while (lVar11 != 0x3f);\n      }\n      local_68[lVar11] = '\\0';\n      _Str = CharLowerA(param_3);\n      sVar5 = strlen(_Str);\n      if (sVar5 != 0) {\n        param_3 = _Str + sVar5;\n        iVar12 = 0x35;\n        do {\n          cVar1 = *_Str;\n          _Str = _Str + 1;\n          iVar12 = (int)cVar1 + iVar12 * 3;\n        } while (_Str != param_3);\n        if (iVar12 == 0x35c206b) break;\n      }\n    }\n  } while (plVar15 != plVar3);\n  lVar11 = plVar15[6];\n  pcVar6 = (code *)FUN_140007bd0(lVar11,0xf0b03804,param_3,param_4);\n  pcVar7 = (code *)FUN_140007bd0(lVar11,0x1ac1e8e1,param_3,param_4);\n  uVar8 = (*pcVar6)(\"kernel32.dll\");\n  pcVar6 = (code *)(*pcVar7)(uVar8,\"VirtualAlloc\");\n  pcVar9 = (code *)(*pcVar7)(uVar8,\"CreateThread\");\n  pcVar7 = (code *)(*pcVar7)(uVar8,\"WaitForSingleObject\");\n  puVar10 = (undefined8 *)(*pcVar6)(0,0x13a,0x3000,0x40);\n  *puVar10 = DAT_1400080c0;\n  *(undefined8 *)((longlong)puVar10 + 0x132) = _s________1400081f2;\n  lVar11 = (longlong)puVar10 - (longlong)((ulonglong)(puVar10 + 1) & 0xfffffffffffffff8);\n  puVar14 = (undefined8 *)((longlong)&DAT_1400080c0 - lVar11);\n  puVar16 = (undefined8 *)((ulonglong)(puVar10 + 1) & 0xfffffffffffffff8);\n  for (uVar13 = (ulonglong)((int)lVar11 + 0x13aU >> 3); uVar13 != 0; uVar13 = uVar13 - 1) {\n    *puVar16 = *puVar14;\n    puVar14 = puVar14 + 1;\n    puVar16 = puVar16 + 1;\n  }\n  uVar8 = (*pcVar9)(0,0,puVar10,0,0,0);\n  (*pcVar7)(uVar8,0xffffffff);\n  return 0;\n}"
+      },
+      "ai": {
+        "summary": "No deterministic behavioral pattern matched this function. Manual reverse engineering is required; absence of a match does not imply safety.",
+        "parameters": [],
+        "return_value": "Not inferred in offline mode.",
+        "behaviors": [],
+        "mitre_technique": null,
+        "risk_level": "UNKNOWN",
+        "notes": "Offline deterministic result; remote AI and follow-up inference were not used.",
+        "decompilation_review": {
+          "status": "PARTIAL",
+          "confidence": "LOW",
+          "findings": [
+            "Decompiler output is available but was not cross-checked by a remote LLM."
+          ],
+          "corrected_pseudocode": ""
+        }
+      },
+      "snapshot": null,
+      "analyzed_at": "2026-11-20 03:08:06",
+      "analysis_cache_key": "offline-v1"
+    }
+  ],
+  "api_calls": [],
+  "network_events": [],
+  "runtime_events": []
+}
